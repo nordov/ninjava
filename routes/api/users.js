@@ -13,21 +13,31 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 })
 
 router.post("/register", (req, res) => {
+
+    
+
     const { errors, isValid } = validateRegisterInput(req.body);
 
     if (!isValid) {
         return res.status(400).json(errors);
     }
 
-    User.findOne({ handle: req.body.handle }).then(user => {
+    User.findOne({ email: req.body.email }).then(user => {
         if (user) {
-            errors.handle = "User already exists";
+            errors.email = "User already exists";
             return res.status(400).json(errors);
         } else {
             const newUser = new User({
                 handle: req.body.handle,
                 email: req.body.email,
-                password: req.body.password
+                password: req.body.password,
+                fighters: [],
+                fights: [],
+                fights_total: 0,
+                fights_won: 0,
+                fights_lost: 0,
+                fights_draws: 0,
+                board_position: 0
             });
 
             bcrypt.genSalt(10, (err, salt) => {
@@ -42,6 +52,7 @@ router.post("/register", (req, res) => {
                             jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                                 res.json({
                                     success: true,
+                                    user: user,
                                     token: "Bearer " + token
                                 });
                             });
@@ -54,13 +65,14 @@ router.post("/register", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
+
     //console.log(req);
+
     const { errors, isValid } = validateLoginInput(req.body);
 
+    //console.log(isValid);
 
-    console.log(isValid);
-
-    if (isValid) {
+    if (!isValid) {
         return res.status(400).json(errors);
     }
 
@@ -77,9 +89,12 @@ router.post("/login", (req, res) => {
             if (isMatch) {
                 const payload = { id: user.id, handle: user.handle };
 
+                user.populate('fighters').populate('figths');
+
                 jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                     res.json({
                         success: true,
+                        user: user,
                         token: "Bearer " + token
                     });
                 });

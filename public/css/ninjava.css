@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow&display=swap');
+/* Body */
+body {
+    /* background-image: linear-gradient(to top left, #010007, #5002b6); */
+    font-family: 'Open Sans';
+    font-size: 16px;;
+    color: white;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #010007, #5002b6, #540636, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+h1, h2, h3 {
+    font-family: 'Archivo Narrow';
+    font-weight: 1000;
+    background: -webkit-linear-gradient(#ffff00, #ff6e02 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    margin: 0 0 10px 0;   
+}
+
+h1 {
+    font-size: 52px;
+}
+
+h2 {
+    font-size: 37px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+a {
+    color: #ffff00;
+    text-decoration: none;
+}
+
+.container {
+    height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(to top right, #540636, transparent);
+    /* border: solid 1px red;    */
+}
+
+/* Header / Logo area */
+/* Game Area */
+.logo{
+    width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.logo img{
+    height: 300px;
+    margin: 50px 0 25px 0;
+}
+
+/* Game Area */
+.game{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+
+.wrap {
+    position: absolute;
+    top: 0;
+    left: 315;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(5px);
+    
+}
+
+    /* Login form */
+    .auth-form form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 300px;
+        margin: 50px auto;
+        padding: 10px;
+        /* border: 1px solid red; */
+    }
+
+    .auth-form .row {
+        width: 80%;
+        margin: 15px auto;
+        /* border: solid 1px red; */
+        
+    }
+
+    .auth-form .row input[type=text]{
+        background-color: transparent;
+        color: white;
+        border: none;
+        line-height: 20px;
+        font-size: large;
+        margin-left: 15px;
+        width: 80%;
+        border-bottom: solid 1px white;
+    }
+
+    .auth-form .row input[type=password]{
+        background-color: transparent;
+        color: white;
+        border: none;
+        line-height: 20px;
+        font-size: large;
+        margin-left: 15px;
+        width: 80%;
+        border-bottom: solid 1px white;
+    }
+
+    .auth-form .row input[type=submit] {
+        height: 30px;
+        width: 100%;
+        background-color: transparent;
+        color: white;
+        border: solid 1 px white;
+        line-height: 20px;
+        font-size: large;        
+    }
+
+    ::placeholder {
+        color: whitesmoke;
+    }
+
+    .invalid::placeholder {
+        color: red;
+    }
+    
+    .auth-form .row input[type=submit]:hover {
+        background-image: linear-gradient(#ffff00, #ff6e02);
+        color: white;    
+    }    
+
+/* Footer */
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 10vh;
+    margin: 0 auto;
+    /* background-color: black; */
+    color: #540636;
+    /* border: 1px solid red; */
+}
