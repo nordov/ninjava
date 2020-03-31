@@ -14,6 +14,8 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    fighters: [{ type: Schema.Types.ObjectId, ref: 'Fighter' }],
+    fights: [{ type: Schema.Types.ObjectId, ref: 'Fight' }],
     fights_total: {
         type: Number
     },    

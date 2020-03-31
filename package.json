@@ -2,10 +2,11 @@
   "name": "ninjava",
   "version": "1.0.0",
   "description": "Javascript Game",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start" : "node app.js",
-    "server" : "nodemon app.js"
+    "start": "node app.js",
+    "server": "nodemon server.js",
+    "build": "browserify ninjava.js -o app.js "
   },
   "repository": {
     "type": "git",
@@ -20,14 +21,25 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "browserify": "^16.5.0",
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "gsap": "^3.2.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.4",
+    "morgan": "^1.9.1",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "validator": "^12.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "babel-loader": "^8.0.6",
+    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-template": "^6.2.0",
     "nodemon": "^2.0.2"
   }
 }
