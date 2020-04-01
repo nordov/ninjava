@@ -1,4 +1,4 @@
 module.exports = {
-  mongoURI: ENV['MONGO_KEY'],
-  secretOrKey: ENV['SECRET_KEY']
+  mongoURI: process.env.MONGO_KEY,
+  secretOrKey: process.env.SECRET_KEY
 }
