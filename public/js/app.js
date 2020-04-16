@@ -6,10 +6,11 @@ const splashToNewCharacter = function() {
     
     window.logo = logo;
     window.wrap = wrap;
-    
+    console.log(wrap);
+
     let logoHeight = logo.height;
     let wrapWidth = wrap.width;
-    let resizing = setInterval(resize, 10);
+    let resizing = setInterval(resize, 60);
 
     wrap.animate([
         { transform: 'translateX(0px)' },
@@ -20,16 +21,19 @@ const splashToNewCharacter = function() {
     });
 
     function resize() {
-        if (wrapWidth === 450 && logoHeight === 150)
+
+        console.log(wrapWidth);
+        console.log(typeof wrapWidth);
+        if (wrapWidth === 150 && logoHeight === 150)
             clearInterval(resizing);
         else {
-            if (wrapWidth !== 450){
-                wrapWidth++;
-                wrap.style.width = wrapWidth + 'px';
+            if (wrapWidth !== 150){
+                wrapWidth--;
+                wrap.style.height = wrapWidth + 'px';
             }
             if (logoHeight !== 150){
                 logoHeight--;
-                logo.style.height = logoHeight + 'px';
+                logo.style.height = logoHeight.toString() + 'px';
             }
         }
     }  
@@ -215,7 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const form = document.getElementById('auth-form');
 
-        form.onsubmit = submit;     
+        form.onsubmit = newCharacter; //TOFIX swap for (submit;)    
         
     }
 
@@ -230,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //Submit form
         const form = document.getElementById('auth-form');
-        form.onsubmit = submit;        
+        form.onsubmit = newCharacter; //TOFIX swap for (submit;)
         
     } 
 

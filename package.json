@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js",
-    "build": "browserify ninjava.js -o app.js "
+    "server": "npm run build & nodemon server.js",
+    "build": "browserify ninjava.js -o public/js/app.js "
   },
   "repository": {
     "type": "git",

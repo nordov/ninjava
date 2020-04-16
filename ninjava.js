@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const form = document.getElementById('auth-form');
 
-        form.onsubmit = submit;     
+        form.onsubmit = newCharacter; //TOFIX swap for (submit;)    
         
     }
 
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //Submit form
         const form = document.getElementById('auth-form');
-        form.onsubmit = submit;        
+        form.onsubmit = newCharacter; //TOFIX swap for (submit;)
         
     } 
 
