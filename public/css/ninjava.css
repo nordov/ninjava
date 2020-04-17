@@ -87,6 +87,9 @@ a {
     backdrop-filter: blur(5px);
     
 }
+    .wrap.content{
+        opacity: 1;
+    }
 
     /* Login form */
     .auth-form form{
