@@ -4,20 +4,20 @@ const splashToNewCharacter = function() {
     const logo = document.getElementById('logo');
     const wrap = document.getElementById('wrap');
 
-    function changeHeight(element, newSize) {
-        
+    function changeHeight(wrap) {
         let resizingHeight = setInterval(res, 10);
-        let elementHeight = element.offsetHeight;
-        console.log(elementHeight);
+        let wrapHeight = wrap.height;
+        console.log(wrapHeight);
         
         function res() {
-            if (elementHeight === 450){
+            if (wrapHeight === 450){
+                //debugger;
                 clearInterval(resizingHeight);
             }else {
-                if (elementHeight !== 450) {
+                if (wrapHeight !== 450) {
                     //debugger;
-                    elementHeight < newSize ? elementHeight++ : elementHeight--;
-                    element.style.height = elementHeight + 'px';
+                    wrapHeight--;
+                    wrap.style.height = wrapHeight + 'px';
                 }
             }
         }
@@ -36,7 +36,7 @@ const splashToNewCharacter = function() {
     
     window.logo = logo;
     window.wrap = wrap;
-    console.log(wrap, 450);
+    console.log(wrap);
 
     let logoHeight = logo.height;
     let wrapWidth = wrap.width;
