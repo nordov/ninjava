@@ -1,19 +1,32 @@
 
-function changeHeight(wrap) {
-    let resizingHeight = setInterval(res, 10);
-    let wrapHeight = wrap.height;
+function changeHeight(element, newHeight) {
+    
+    let elementHeight = element.offsetHeight;
+    let resizingHeight = setInterval(resize, 10);
 
-    function res() {
-        if (wrapHeight === 450) {
-            debugger;
-            clearInterval(resizingHeight);
-            else {
-                if (wrapHeight !== 450) {
-                    debugger;
-                    wrapHeight--;
-                    wrap.style.height = wrapHeight + 'px';
-                }
-            }
+    function resize() {
+        if (elementHeight === newHeight) {
+        clearInterval(resizingHeight);
+        }else {
+            if (elementHeight !== newHeight) 
+                //growa ir shrinks based on ratio of current size v new size
+                wrap.style.height = elementHeight < newHeight ? elementHeight++ + 'px' : elementHeight-- + 'px';
+        }
+    }
+}
+
+function changeWidth(element, newWidth) {
+
+    let elementWidth = element.offsetWidth;
+    let resizingWidth = setInterval(resize, 10);
+
+    function resize() {
+        if (elementWidth === newWidth) {
+            clearInterval(resizingWidth);
+        } else {
+            if (elementWidth !== newWidth)
+                //growa ir shrinks based on ratio of current size v new size
+                wrap.style.width = elementWidth < newWidth ? elementWidth++ + 'px' : elementWidth-- + 'px';
         }
     }
 }
@@ -22,7 +35,8 @@ const splashToNewCharacter = function() {
     const logo = document.getElementById('logo');
     const wrap = document.getElementById('wrap');
 
-    changeHeight(wrap);
+    changeHeight(wrap, 450);
+    changeWidth(wrap, 900);
     
     // const trans = function () {
     //     wrap.animate([

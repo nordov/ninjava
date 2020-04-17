@@ -1,67 +1,76 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 
+function changeHeight(element, newHeight) {
+    
+    let elementHeight = element.offsetHeight;
+    let resizingHeight = setInterval(resize, 10);
+
+    function resize() {
+        if (elementHeight === newHeight) {
+        clearInterval(resizingHeight);
+        }else {
+            if (elementHeight !== newHeight) 
+                //growa ir shrinks based on ratio of current size v new size
+                wrap.style.height = elementHeight < newHeight ? elementHeight++ + 'px' : elementHeight-- + 'px';
+        }
+    }
+}
+
+function changeWidth(element, newWidth) {
+
+    let elementWidth = element.offsetWidth;
+    let resizingWidth = setInterval(resize, 10);
+
+    function resize() {
+        if (elementWidth === newWidth) {
+            clearInterval(resizingWidth);
+        } else {
+            if (elementWidth !== newWidth)
+                //growa ir shrinks based on ratio of current size v new size
+                wrap.style.width = elementWidth < newWidth ? elementWidth++ + 'px' : elementWidth-- + 'px';
+        }
+    }
+}
+
 const splashToNewCharacter = function() {
     const logo = document.getElementById('logo');
     const wrap = document.getElementById('wrap');
 
-    function changeHeight(wrap) {
-        let resizingHeight = setInterval(res, 10);
-        let wrapHeight = wrap.height;
-        console.log(wrapHeight);
-        
-        function res() {
-            if (wrapHeight === 450){
-                //debugger;
-                clearInterval(resizingHeight);
-            }else {
-                if (wrapHeight !== 450) {
-                    //debugger;
-                    wrapHeight--;
-                    wrap.style.height = wrapHeight + 'px';
-                }
-            }
-        }
-    }
+    changeHeight(wrap, 450);
+    changeWidth(wrap, 900);
     
-    const trans = function () {
-        wrap.animate([
-            { transform: 'translateX(0px)' },
-            { transform: 'scaleX(2)' },
-            //{ transform: 'translateX(300px)' }        
-        ], {
-            duration: 1000,
-            fill: "forwards"
-        });
-    }
-    
-    window.logo = logo;
-    window.wrap = wrap;
-    console.log(wrap);
+    // const trans = function () {
+    //     wrap.animate([
+    //         { transform: 'translateX(0px)' },
+    //         { transform: 'scaleX(2)' },
+    //         //{ transform: 'translateX(300px)' }        
+    //     ], {
+    //         duration: 1000,
+    //         fill: "forwards"
+    //     });
+    // }
 
-    let logoHeight = logo.height;
-    let wrapWidth = wrap.width;
-    //let resizing = setInterval(resize, 10);
-    //trans(wrap).then((wrap) => wrap.innerHTML = "<h1>Hello</h1>");
-    changeHeight(wrap);
+
+    
     
 
-    function resize() {
+    // function resize() {
 
-        console.log(wrapWidth);
-        console.log(typeof wrapWidth);
-        if (wrapWidth === 150 && logoHeight === 150)
-            clearInterval(resizing);
-        else {
-            if (wrapWidth !== 150){
-                wrapWidth--;
-                wrap.style.height = wrapWidth + 'px';
-            }
-            if (logoHeight !== 150){
-                logoHeight--;
-                logo.style.height = logoHeight.toString() + 'px';
-            }
-        }
-    }  
+    //     console.log(wrapWidth);
+    //     console.log(typeof wrapWidth);
+    //     if (wrapWidth === 150 && logoHeight === 150)
+    //         clearInterval(resizing);
+    //     else {
+    //         if (wrapWidth !== 150){
+    //             wrapWidth--;
+    //             wrap.style.height = wrapWidth + 'px';
+    //         }
+    //         if (logoHeight !== 150){
+    //             logoHeight--;
+    //             logo.style.height = logoHeight.toString() + 'px';
+    //         }
+    //     }
+    // }  
 };
 
 module.exports = splashToNewCharacter;
