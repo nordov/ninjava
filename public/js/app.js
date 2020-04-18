@@ -1,4 +1,6 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+const htmls = require('./htmls');
+
 
 function changeHeight(element, newHeight) {
     
@@ -28,28 +30,47 @@ function changeWidth(element, newWidth) {
     }
 }
 
-function fadeContent(element, fade){
+function fadeContent(element, fade, newContent = ""){
 
     if (fade === "out"){
-        let fadeEffect = setInterval(function () {
+        let fadeOut = setInterval(function () {
             if (!element.style.opacity) {
                 element.style.opacity = 1;
             }
             if (element.style.opacity > 0) {
                 element.style.opacity -= 0.1;
             } else {
-                clearInterval(fadeEffect);
+                clearInterval(fadeOut);
+                element.innerHTML = newContent;
             }
         }, 30); 
-    } else {
-        let fadeEffect = setInterval(function () {
-            if (element.style.opacity < 1) {
+    } 
+    if (fade === "in") {
+        let fadeIn = setInterval(function () {
+            if (!element.style.opacity) {
+                element.style.opacity = 0;
+            }            
+            if (element.style.opacity < 0.9) {
                 element.style.opacity += 0.1;
             } else {
-                clearInterval(fadeEffect);
+                clearInterval(fadeIn);
             }
         }, 30);         
     }
+
+}
+
+function fadeOut(element){
+
+    element.classList.add("hide");
+    element.classList.remove("show");
+
+}
+
+function fadeIn(element) {
+
+    element.classList.add("show");
+    element.classList.remove("hide");
 
 }
 
@@ -57,19 +78,21 @@ const splashToNewCharacter = function() {
     const logo = document.getElementById('logo');
     const wrap = document.getElementById('wrap');
     const wrapContent = document.getElementById('wrap-content');
-    
 
-    fadeContent(wrapContent, "out");
     changeHeight(logo, 150);
     changeHeight(wrap, 450);
     changeWidth(wrap, 900);
+    fadeOut(wrapContent);
+    wrapContent.innerHTML = htmls.newCharacter;
+    fadeIn(wrapContent, htmls.newCharacter);
+
     
     
  
 };
 
 module.exports = splashToNewCharacter;
-},{}],2:[function(require,module,exports){
+},{"./htmls":2}],2:[function(require,module,exports){
 
 const authForms = {
 
@@ -156,7 +179,53 @@ const authForms = {
         </div>      
     `,
     'newCharacter':`
-        
+        <div class="new-character">
+            <div class="arrows left-arrow">
+                <i class="fas fa-chevron-circle-left"></i>
+            </div>        
+                <div class="character-profile">
+                    <div class="character-image">
+                        
+                    </div>
+                    <div class="character-info">
+                        <h4>Choose your fighter!</h4>
+                        <h1>Hanzo Lori</h1>
+                        <p>From the cold alleys of Brooklyn, Hanzo Lori grew with the merciless Triads. After his uncle was murder by the same group he swore loyalty to, Hanzo made a promise to use his deadly skills to finish those who thought them to him!</p>
+                        <div class="character-specs">
+                            <div class="skill">
+                                <h4>Attack:</h4> 
+                                <div class='bar'>
+                                    <div class='percent' style='width:75%;'></div>
+                                </div> 
+                            </div>
+                            <div class="skill">
+                                <h4>Defense:</h4> 
+                                <div class='bar'>
+                                    <div class='percent' style='width:80%;'></div>
+                                </div> 
+                            </div>
+                            <div class="skill">
+                                <h4>Agility:</h4> 
+                                <div class='bar'>
+                                    <div class='percent' style='width:93%;'></div>
+                                </div> 
+                            </div>
+                            <div class="skill">
+                                <h4>Speed:</h4> 
+                                <div class='bar'>
+                                    <div class='percent' style='width:80%;'></div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="character-select">
+                            <button>Select</button>
+                        </div>
+                    </div>
+                </div>
+            <div class="arrows right-arrow">
+                <i class="fas fa-chevron-circle-right"></i>
+            </div>                
+        </div>    
     `,
 };
 

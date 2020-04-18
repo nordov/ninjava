@@ -84,7 +84,53 @@ const authForms = {
         </div>      
     `,
     'newCharacter':`
-        
+        <div class="new-character">
+            <div class="arrows left-arrow">
+                <i class="fas fa-chevron-circle-left"></i>
+            </div>        
+                <div class="character-profile">
+                    <div class="character-image">
+                        
+                    </div>
+                    <div class="character-info">
+                        <h4>Choose your fighter!</h4>
+                        <h1>Hanzo Lori</h1>
+                        <p>From the cold alleys of Brooklyn, Hanzo Lori grew with the merciless Triads. After his uncle was murder by the same group he swore loyalty to, Hanzo made a promise to use his deadly skills to finish those who thought them to him!</p>
+                        <div class="character-specs">
+                            <div class="skill">
+                                <h4>Attack:</h4> 
+                                <div class='bar'>
+                                    <div class='percent' style='width:75%;'></div>
+                                </div> 
+                            </div>
+                            <div class="skill">
+                                <h4>Defense:</h4> 
+                                <div class='bar'>
+                                    <div class='percent' style='width:80%;'></div>
+                                </div> 
+                            </div>
+                            <div class="skill">
+                                <h4>Agility:</h4> 
+                                <div class='bar'>
+                                    <div class='percent' style='width:93%;'></div>
+                                </div> 
+                            </div>
+                            <div class="skill">
+                                <h4>Speed:</h4> 
+                                <div class='bar'>
+                                    <div class='percent' style='width:80%;'></div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="character-select">
+                            <button>Select</button>
+                        </div>
+                    </div>
+                </div>
+            <div class="arrows right-arrow">
+                <i class="fas fa-chevron-circle-right"></i>
+            </div>                
+        </div>    
     `,
 };
 

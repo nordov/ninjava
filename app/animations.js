@@ -1,3 +1,5 @@
+const htmls = require('./htmls');
+
 
 function changeHeight(element, newHeight) {
     
@@ -27,28 +29,47 @@ function changeWidth(element, newWidth) {
     }
 }
 
-function fadeContent(element, fade){
+function fadeContent(element, fade, newContent = ""){
 
     if (fade === "out"){
-        let fadeEffect = setInterval(function () {
+        let fadeOut = setInterval(function () {
             if (!element.style.opacity) {
                 element.style.opacity = 1;
             }
             if (element.style.opacity > 0) {
                 element.style.opacity -= 0.1;
             } else {
-                clearInterval(fadeEffect);
+                clearInterval(fadeOut);
+                element.innerHTML = newContent;
             }
         }, 30); 
-    } else {
-        let fadeEffect = setInterval(function () {
-            if (element.style.opacity < 1) {
+    } 
+    if (fade === "in") {
+        let fadeIn = setInterval(function () {
+            if (!element.style.opacity) {
+                element.style.opacity = 0;
+            }            
+            if (element.style.opacity < 0.9) {
                 element.style.opacity += 0.1;
             } else {
-                clearInterval(fadeEffect);
+                clearInterval(fadeIn);
             }
         }, 30);         
     }
+
+}
+
+function fadeOut(element){
+
+    element.classList.add("hide");
+    element.classList.remove("show");
+
+}
+
+function fadeIn(element) {
+
+    element.classList.add("show");
+    element.classList.remove("hide");
 
 }
 
@@ -56,12 +77,14 @@ const splashToNewCharacter = function() {
     const logo = document.getElementById('logo');
     const wrap = document.getElementById('wrap');
     const wrapContent = document.getElementById('wrap-content');
-    
 
-    fadeContent(wrapContent, "out");
     changeHeight(logo, 150);
     changeHeight(wrap, 450);
     changeWidth(wrap, 900);
+    fadeOut(wrapContent);
+    wrapContent.innerHTML = htmls.newCharacter;
+    fadeIn(wrapContent, htmls.newCharacter);
+
     
     
  
