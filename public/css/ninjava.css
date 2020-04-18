@@ -87,8 +87,10 @@ a {
     backdrop-filter: blur(5px);
     
 }
-    .wrap.content{
-        opacity: 1;
+    .wrap-content{
+        display: flex;
+        flex-direction: row;
+        height: 100%;
     }
 
     /* Login form */
@@ -155,6 +157,74 @@ a {
         color: white;    
     }    
 
+    /*  New Character  */
+    .arrows {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+        height: 100%;
+        font-size: 50px;
+        color: linear-gradient(#ffff00, #ff6e02 );
+        padding: 25px;
+        border: solid 1px red;   
+    }
+
+    .new-character{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        border: solid 1px red;   
+    }
+
+    .character-profile{
+        display: flex;
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+        border: solid 1px red;   
+    }
+    
+        .character-image{
+            width: 50%;
+            border: solid 1px red;
+        }
+
+        .character-info{
+            box-sizing: border-box;
+            padding: 35px;
+            width: 50%;
+            border: solid 1px red;
+        }
+
+            .character-info p{
+                margin-bottom: 25px;
+            }
+
+        .character-select{
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+            .character-select button {
+                height: 30px;
+                width: 100%;
+                background-color: transparent;
+                color: white;
+                border: solid 1 px white;
+                line-height: 20px;
+                font-size: large;
+            }
+
+            .character-select button:hover {
+                background-image: linear-gradient(#ffff00, #ff6e02);
+                color: white;    
+            }              
+
+    /*  END OF New Character  */
+
+
 /* Footer */
 .footer{
     display: flex;
@@ -169,3 +239,30 @@ a {
     color: #540636;
     /* border: 1px solid red; */
 }
+
+/* Micellaneous */
+
+/* Skill info bar */
+.skill{
+	position:relative;
+	margin-bottom:5px;
+}
+    .skill:last-of-type{
+        margin-bottom:0;
+    }
+    .skill > h4{
+        margin-top:0;
+        margin-bottom:5px;
+        font-weight:500;
+        letter-spacing:2px;
+        text-transform:uppercase;
+        font-size:14px;
+    }
+    .skill > .bar{
+        background:white;
+    }
+        .skill > .bar > .percent{
+            background: -webkit-linear-gradient(#ffff00, #ff6e02 );
+            width:10%;
+            height:6px;
+        }
