@@ -167,14 +167,19 @@ a {
         font-size: 50px;
         color: linear-gradient(#ffff00, #ff6e02 );
         padding: 25px;
-        border: solid 1px red;   
+        opacity: 0.3;
+        /* border: solid 1px red;    */
     }
+
+        .arrows:hover{
+            opacity: 0.5;
+        }
 
     .new-character{
         display: flex;
         height: 100%;
         width: 100%;
-        border: solid 1px red;   
+        /* border: solid 1px red;    */
     }
 
     .character-profile{
@@ -182,19 +187,25 @@ a {
         box-sizing: border-box;
         height: 100%;
         width: 100%;
-        border: solid 1px red;   
+        /* border: solid 1px red;    */
     }
     
         .character-image{
+            display: flex;
             width: 50%;
-            border: solid 1px red;
+            /* border: solid 1px red; */
         }
+
+            .character-image img{
+                height: 85%;
+                margin: auto;
+            }
 
         .character-info{
             box-sizing: border-box;
             padding: 35px;
             width: 50%;
-            border: solid 1px red;
+            /* border: solid 1px red; */
         }
 
             .character-info p{
