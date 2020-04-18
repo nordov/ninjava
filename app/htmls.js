@@ -90,7 +90,7 @@ const authForms = {
             </div>        
                 <div class="character-profile">
                     <div class="character-image">
-                        
+                        <img src="/characters/hanzo/hanzo.gif" />  
                     </div>
                     <div class="character-info">
                         <h4>Choose your fighter!</h4>
