@@ -1,6 +1,6 @@
 const splashToNewCharacter = require('./animations');
 
-const newCharacter = function(user) {
+const newCharacter = function() {
     splashToNewCharacter();
 };
 
