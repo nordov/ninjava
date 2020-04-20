@@ -1,6 +1,17 @@
 
 const authForms = {
 
+    'justPlay': `
+        <div class="auth-form" id="auth-form">
+            <form >
+                <h1>Click to play!</h1>
+              
+                <div class="row">
+                    <input type="submit" value="Sign In" />
+                </div>
+            </form>
+        </div>      
+    `,
     'singIn': `
         <div class="auth-form" id="auth-form">
             <form >
