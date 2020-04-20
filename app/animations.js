@@ -19,6 +19,7 @@ function changeWidth(element, newWidth) {
 
     let elementWidth = element.offsetWidth;
     let resizingWidth = setInterval(resize, 1);
+    return "success";
 
     function resize() {
         if (elementWidth !== newWidth)
@@ -27,36 +28,6 @@ function changeWidth(element, newWidth) {
         else
             clearInterval(resizingWidth);
     }
-}
-
-function fadeContent(element, fade, newContent = ""){
-
-    if (fade === "out"){
-        let fadeOut = setInterval(function () {
-            if (!element.style.opacity) {
-                element.style.opacity = 1;
-            }
-            if (element.style.opacity > 0) {
-                element.style.opacity -= 0.1;
-            } else {
-                clearInterval(fadeOut);
-                element.innerHTML = newContent;
-            }
-        }, 30); 
-    } 
-    if (fade === "in") {
-        let fadeIn = setInterval(function () {
-            if (!element.style.opacity) {
-                element.style.opacity = 0;
-            }            
-            if (element.style.opacity < 0.9) {
-                element.style.opacity += 0.1;
-            } else {
-                clearInterval(fadeIn);
-            }
-        }, 30);         
-    }
-
 }
 
 function fadeOut(element){
@@ -80,13 +51,14 @@ const splashToNewCharacter = function() {
 
     changeHeight(logo, 150);
     changeHeight(wrap, 450);
-    changeWidth(wrap, 900);
-    fadeOut(wrapContent);
-    wrapContent.innerHTML = htmls.newCharacter;
-    fadeIn(wrapContent, htmls.newCharacter);
+    changeWidth(wrap, 900)
+        .then(() => {
+            fadeOut(wrapContent);
+            wrapContent.innerHTML = htmls.newCharacter;
+            fadeIn(wrapContent, htmls.newCharacter);
+        });
 
-    
-    
+
  
 };
 

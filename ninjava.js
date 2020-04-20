@@ -63,38 +63,8 @@ const submit = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-
-
-    function showSignInForm(){      
-
-        const wrapContent = document.getElementById('wrap-content');        
-
-        wrapContent.innerHTML = htmls.singIn;
-
-        //Listens to form swap
-        document.getElementById('swap').addEventListener('click', showSignUpForm);
-
-        const form = document.getElementById('auth-form');
-
-        form.onsubmit = newCharacter; //TOFIX swap for (submit;)    
-        
-    }
-
-    function showSignUpForm() {
-
-        const wrapContent = document.getElementById('wrap-content');
-
-        wrapContent.innerHTML = htmls.singUp;
-
-        // Listens to form swap
-        document.getElementById('swap').addEventListener('click', showSignInForm);
-
-        //Submit form
-        const form = document.getElementById('auth-form');
-        form.onsubmit = newCharacter; //TOFIX swap for (submit;)
-        
-    } 
-
-    showSignInForm();  
+    const wrapContent = document.getElementById('wrap-content');
+    
+    wrapContent.innerHTML = htmls.justPlay; 
    
 });

@@ -20,6 +20,7 @@ function changeWidth(element, newWidth) {
 
     let elementWidth = element.offsetWidth;
     let resizingWidth = setInterval(resize, 1);
+    return "success";
 
     function resize() {
         if (elementWidth !== newWidth)
@@ -28,36 +29,6 @@ function changeWidth(element, newWidth) {
         else
             clearInterval(resizingWidth);
     }
-}
-
-function fadeContent(element, fade, newContent = ""){
-
-    if (fade === "out"){
-        let fadeOut = setInterval(function () {
-            if (!element.style.opacity) {
-                element.style.opacity = 1;
-            }
-            if (element.style.opacity > 0) {
-                element.style.opacity -= 0.1;
-            } else {
-                clearInterval(fadeOut);
-                element.innerHTML = newContent;
-            }
-        }, 30); 
-    } 
-    if (fade === "in") {
-        let fadeIn = setInterval(function () {
-            if (!element.style.opacity) {
-                element.style.opacity = 0;
-            }            
-            if (element.style.opacity < 0.9) {
-                element.style.opacity += 0.1;
-            } else {
-                clearInterval(fadeIn);
-            }
-        }, 30);         
-    }
-
 }
 
 function fadeOut(element){
@@ -81,13 +52,14 @@ const splashToNewCharacter = function() {
 
     changeHeight(logo, 150);
     changeHeight(wrap, 450);
-    changeWidth(wrap, 900);
-    fadeOut(wrapContent);
-    wrapContent.innerHTML = htmls.newCharacter;
-    fadeIn(wrapContent, htmls.newCharacter);
+    changeWidth(wrap, 900)
+        .then(() => {
+            fadeOut(wrapContent);
+            wrapContent.innerHTML = htmls.newCharacter;
+            fadeIn(wrapContent, htmls.newCharacter);
+        });
 
-    
-    
+
  
 };
 
@@ -96,6 +68,17 @@ module.exports = splashToNewCharacter;
 
 const authForms = {
 
+    'justPlay': `
+        <div class="auth-form" id="auth-form">
+            <form >
+                <h1>Click to play!</h1>
+              
+                <div class="row">
+                    <input type="submit" value="Sign In" />
+                </div>
+            </form>
+        </div>      
+    `,
     'singIn': `
         <div class="auth-form" id="auth-form">
             <form >
@@ -304,39 +287,9 @@ const submit = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-
-
-    function showSignInForm(){      
-
-        const wrapContent = document.getElementById('wrap-content');        
-
-        wrapContent.innerHTML = htmls.singIn;
-
-        //Listens to form swap
-        document.getElementById('swap').addEventListener('click', showSignUpForm);
-
-        const form = document.getElementById('auth-form');
-
-        form.onsubmit = newCharacter; //TOFIX swap for (submit;)    
-        
-    }
-
-    function showSignUpForm() {
-
-        const wrapContent = document.getElementById('wrap-content');
-
-        wrapContent.innerHTML = htmls.singUp;
-
-        // Listens to form swap
-        document.getElementById('swap').addEventListener('click', showSignInForm);
-
-        //Submit form
-        const form = document.getElementById('auth-form');
-        form.onsubmit = newCharacter; //TOFIX swap for (submit;)
-        
-    } 
-
-    showSignInForm();  
+    const wrapContent = document.getElementById('wrap-content');
+    
+    wrapContent.innerHTML = htmls.justPlay; 
    
 });
 },{"./app/htmls":2,"./app/new_character":3}]},{},[4]);
