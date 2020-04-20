@@ -52,14 +52,10 @@ const splashToNewCharacter = function() {
 
     changeHeight(logo, 150);
     changeHeight(wrap, 450);
-    changeWidth(wrap, 900)
-        .then(() => {
-            fadeOut(wrapContent);
-            wrapContent.innerHTML = htmls.newCharacter;
-            fadeIn(wrapContent, htmls.newCharacter);
-        });
-
-
+    changeWidth(wrap, 900)        
+    fadeOut(wrapContent);
+    wrapContent.innerHTML = htmls.newCharacter;
+    fadeIn(wrapContent, htmls.newCharacter);
  
 };
 
@@ -69,14 +65,8 @@ module.exports = splashToNewCharacter;
 const authForms = {
 
     'justPlay': `
-        <div class="auth-form" id="auth-form">
-            <form >
-                <h1>Click to play!</h1>
-              
-                <div class="row">
-                    <input type="submit" value="Sign In" />
-                </div>
-            </form>
+        <div class="auth-form">
+                    <h1 id="clickNPlay">Click to play!</h1>
         </div>      
     `,
     'singIn': `
@@ -216,7 +206,7 @@ module.exports = authForms;
 },{}],3:[function(require,module,exports){
 const splashToNewCharacter = require('./animations');
 
-const newCharacter = function(user) {
+const newCharacter = function() {
     splashToNewCharacter();
 };
 
@@ -232,9 +222,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     wrapContent.innerHTML = htmls.justPlay; 
 
-    const form = document.getElementById('auth-form');
+    const playButton = document.getElementById('clickNPlay');
 
-    form.onsubmit = newCharacter;     
+    playButton.onclick = newCharacter;     
    
 });
 },{"./app/htmls":2,"./app/new_character":3}]},{},[4]);

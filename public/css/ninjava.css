@@ -93,147 +93,87 @@ a {
         height: 100%;
     }
 
-    /* Login form */
-    .auth-form form{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        max-width: 300px;
-        margin: 50px auto;
-        padding: 10px;
-        /* border: 1px solid red; */
+#clickNPlay{
+    cursor: pointer;
+}
+
+/*  New Character  */
+.arrows {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100%;
+    font-size: 50px;
+    color: linear-gradient(#ffff00, #ff6e02 );
+    padding: 25px;
+    opacity: 0.3;
+    /* border: solid 1px red;    */
+}
+
+    .arrows:hover{
+        opacity: 0.5;
     }
 
-    .auth-form .row {
-        width: 80%;
-        margin: 15px auto;
+.new-character{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    /* border: solid 1px red;    */
+}
+
+.character-profile{
+    display: flex;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    /* border: solid 1px red;    */
+}
+
+    .character-image{
+        display: flex;
+        width: 50%;
         /* border: solid 1px red; */
-        
     }
 
-    .auth-form .row input[type=text]{
-        background-color: transparent;
-        color: white;
-        border: none;
-        line-height: 20px;
-        font-size: large;
-        margin-left: 15px;
-        width: 80%;
-        border-bottom: solid 1px white;
+        .character-image img{
+            height: 85%;
+            margin: auto;
+        }
+
+    .character-info{
+        box-sizing: border-box;
+        padding: 35px;
+        width: 50%;
+        /* border: solid 1px red; */
     }
 
-    .auth-form .row input[type=password]{
-        background-color: transparent;
-        color: white;
-        border: none;
-        line-height: 20px;
-        font-size: large;
-        margin-left: 15px;
-        width: 80%;
-        border-bottom: solid 1px white;
-    }
+        .character-info p{
+            margin-bottom: 25px;
+        }
 
-    .auth-form .row input[type=submit] {
-        height: 30px;
-        width: 100%;
-        background-color: transparent;
-        color: white;
-        border: solid 1 px white;
-        line-height: 20px;
-        font-size: large;        
-    }
-
-    ::placeholder {
-        color: whitesmoke;
-    }
-
-    .invalid::placeholder {
-        color: red;
-    }
-    
-    .auth-form .row input[type=submit]:hover {
-        background-image: linear-gradient(#ffff00, #ff6e02);
-        color: white;    
-    }    
-
-    /*  New Character  */
-    .arrows {
+    .character-select{
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        box-sizing: border-box;
-        height: 100%;
-        font-size: 50px;
-        color: linear-gradient(#ffff00, #ff6e02 );
-        padding: 25px;
-        opacity: 0.3;
-        /* border: solid 1px red;    */
+        margin-top: 25px;
     }
 
-        .arrows:hover{
-            opacity: 0.5;
+        .character-select button {
+            height: 30px;
+            width: 100%;
+            background-color: transparent;
+            color: white;
+            border: solid 1 px white;
+            line-height: 20px;
+            font-size: large;
         }
 
-    .new-character{
-        display: flex;
-        height: 100%;
-        width: 100%;
-        /* border: solid 1px red;    */
-    }
+        .character-select button:hover {
+            background-image: linear-gradient(#ffff00, #ff6e02);
+            color: white;    
+        }              
 
-    .character-profile{
-        display: flex;
-        box-sizing: border-box;
-        height: 100%;
-        width: 100%;
-        /* border: solid 1px red;    */
-    }
-    
-        .character-image{
-            display: flex;
-            width: 50%;
-            /* border: solid 1px red; */
-        }
-
-            .character-image img{
-                height: 85%;
-                margin: auto;
-            }
-
-        .character-info{
-            box-sizing: border-box;
-            padding: 35px;
-            width: 50%;
-            /* border: solid 1px red; */
-        }
-
-            .character-info p{
-                margin-bottom: 25px;
-            }
-
-        .character-select{
-            display: flex;
-            justify-content: center;
-            margin-top: 25px;
-        }
-
-            .character-select button {
-                height: 30px;
-                width: 100%;
-                background-color: transparent;
-                color: white;
-                border: solid 1 px white;
-                line-height: 20px;
-                font-size: large;
-            }
-
-            .character-select button:hover {
-                background-image: linear-gradient(#ffff00, #ff6e02);
-                color: white;    
-            }              
-
-    /*  END OF New Character  */
+/*  END OF New Character  */
 
 
 /* Footer */

@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
     wrapContent.innerHTML = htmls.justPlay; 
 
-    const form = document.getElementById('auth-form');
+    const playButton = document.getElementById('clickNPlay');
 
-    form.onsubmit = newCharacter;     
+    playButton.onclick = newCharacter;     
    
 });
