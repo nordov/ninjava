@@ -54,8 +54,11 @@ const splashToNewCharacter = function() {
     changeHeight(wrap, 450);
     changeWidth(wrap, 900)        
     fadeOut(wrapContent);
+    wrapContent.innerHTML = "";  
     wrapContent.innerHTML = htmls.characters.default;
-    fadeIn(wrapContent);
+    setTimeout(() => { fadeIn(wrapContent); }, 3000);
+    
+    
 
     return 0;
  
