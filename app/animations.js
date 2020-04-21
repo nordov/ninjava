@@ -1,4 +1,4 @@
-const htmls = require('./htmls');
+const htmls = require('./views/htmls');
 
 
 function changeHeight(element, newHeight) {
