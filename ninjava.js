@@ -1,5 +1,5 @@
-const htmls = require('./app/htmls');
-const newCharacter = require('./app/screens');
+const htmls = require('./app/views/htmls');
+const newCharacter = require('./app/views/new_character');
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     wrapContent.innerHTML = htmls.justPlay; 
 
     const playButton = document.getElementById('clickNPlay');
+
+    console.log(newCharacter);
 
     playButton.onclick = newCharacter;     
    

@@ -1,6 +1,10 @@
 const htmls = require('./htmls');
-const splashToNewCharacter = require('./animations');
+const splashToNewCharacter = require('../animations');
+const movesSelection = require('./moves_selection');
 
+/*************************************/
+/* CHOOSE FIGHTER SCREEN             */
+/*************************************/
 const newCharacter = function() {
     
     const charactersList = ['Hanzo',
@@ -9,30 +13,35 @@ const newCharacter = function() {
                             'Gonz O-Bits',
                             'Rico Star',
                             'Kateena',];
+        
     let currentCharacter = splashToNewCharacter();
-
     //console.log(currentCharacter);
 
-    const leftArrow = document.getElementById('left-arrow');
-    console.log(leftArrow);
-    const rightArrow = document.getElementById('right-arrow');
-    console.log(rightArrow);
-
-
-    leftArrow.addEventListener("click", e => {
+    document.getElementById('left-arrow').addEventListener("click", () => {
         
         if (currentCharacter !== 0) currentCharacter--;
 
         document.getElementsByClassName('character-profile')[0].innerHTML = htmls.characters[charactersList[currentCharacter]];
+
+        document.getElementById('chosen').addEventListener("click", () => {
+            movesSelection(charactersList[currentCharacter]);
+        });
+        
     });
 
-    rightArrow.addEventListener("click", e => {
+    document.getElementById('right-arrow').addEventListener("click", () => {
 
         if (currentCharacter !== charactersList.length - 1) currentCharacter++;
 
         document.getElementsByClassName('character-profile')[0].innerHTML = htmls.characters[charactersList[currentCharacter]];
+
+        document.getElementById('chosen').addEventListener("click", () => {
+            movesSelection(charactersList[currentCharacter]);
+        });        
+
     });
 
 };
 
 module.exports = newCharacter;
+

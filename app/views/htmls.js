@@ -6,88 +6,6 @@ const authForms = {
                     <h1 id="clickNPlay">Click to play!</h1>
         </div>      
     `,
-    'singIn': `
-        <div class="auth-form" id="auth-form">
-            <form >
-                <h1>Sign In!</h1>
-                <a id="swap" href="#">No account? Sign up here</a>
-                
-                <input type="hidden" id="action" value="login" />
-                
-                <div class="row">
-                    <i class="fas fa-envelope"></i>
-                    <input 
-                        type="text" 
-                        id="email" 
-                        placeholder="Email"
-                    />
-                </div>
-
-                <div class="row">
-                    <i class="fas fa-lock"></i>
-                    <input
-                        type="password" 
-                        id="password" 
-                        placeholder="Password"
-                    />
-                </div>
-                
-                <div class="row">
-                    <input type="submit" value="Sign In" />
-                </div>
-            </form>
-        </div>      
-    `,
-    'singUp': `
-        <div class="info-wrap auth-form" id="auth-form">
-            <form >
-                <h1>Sign Up</h1>
-                <a id="swap" href="#">Have an account? Sign in here</a>
-
-                <input type="hidden" id="action" value="register" />
-
-                <div class="row">
-                    <i class="fas fa-envelope"></i>
-                    <input 
-                        type="text" 
-                        id="email" 
-                        placeholder="Email"
-                    />
-                </div>
-
-                <div class="row">
-                    <i class="fas fa-user"></i>
-                    <input 
-                        type="text" 
-                        id="handle" 
-                        placeholder="Handle"
-                    />
-                </div>
-
-                <div class="row">
-                    <i class="fas fa-lock"></i>
-                    <input 
-                        type="password" 
-                        id="password" 
-                        placeholder="Enter a password" 
-                    />
-                </div>
-
-                <div class="row">
-                    <i class="fas fa-lock"></i>
-                    <input 
-                        type="password" 
-                        id="password2"
-                        placeholder="Confirm your password" 
-                    />
-                </div>
-
-                <div class="row">
-                    <input type="submit" value="Sign Up" />
-                </div>
-            </form>
-        </div>      
-    `,
     'characters':{
         'default':
             `<div class="new-character">
@@ -128,7 +46,7 @@ const authForms = {
                                 </div>
                             </div>
                             <div class="character-select">
-                                <button>Select</button>
+                                <button id="chosen">Select</button>
                             </div>
                         </div>
                     </div>
@@ -170,7 +88,7 @@ const authForms = {
                     </div>
                 </div>
                 <div class="character-select">
-                    <button>Select</button>
+                    <button id="chosen">Select</button>
                 </div>
             </div>`,
         'Wy-Te Pel':
@@ -207,7 +125,7 @@ const authForms = {
                     </div>
                 </div>
                 <div class="character-select">
-                    <button>Select</button>
+                    <button id="chosen">Select</button>
                 </div>
             </div>`,
         'Poin Tee-Hut':
@@ -244,7 +162,7 @@ const authForms = {
                     </div>
                 </div>
                 <div class="character-select">
-                    <button>Select</button>
+                    <button id="chosen">Select</button>
                 </div>
             </div>`,
         'Gonz O-Bits':
@@ -281,7 +199,7 @@ const authForms = {
                     </div>
                 </div>
                 <div class="character-select">
-                    <button>Select</button>
+                    <button id="chosen">Select</button>
                 </div>
             </div>`,
         'Rico Star':
@@ -318,7 +236,7 @@ const authForms = {
                     </div>
                 </div>
                 <div class="character-select">
-                    <button>Select</button>
+                    <button id="chosen">Select</button>
                 </div>
             </div>`,
         'Kateena':
@@ -355,10 +273,126 @@ const authForms = {
                     </div>
                 </div>
                 <div class="character-select">
-                    <button>Select</button>
+                    <button id="chosen">Select</button>
                 </div>
             </div>`,
-    }
+    },
+    'movesSelection':
+        `<div class="moves-selection" id="moves">
+            <form>
+                <h2>Round I</h2>
+                <div class="row">
+                    <label><h4>Defence:</h4>
+                        <select id="defense11">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                        <select id="defense12">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                        <select id="defense13">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                    </label>
+                    <label><h4>Attack:</h4>
+                               <select id="attack11">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                        <select id="attack12">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                        <select id="attack13">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                    </label>
+                </div>
+                <h2>Round II</h2>
+                <div class="row">
+                    <label><h4>Defence:</h4>
+                <select id="defense21">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                        <select id="defense22">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                        <select id="defense23">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                    </label>
+                    <label><h4>Attack:</h4>
+                        <select id="attack21">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                        <select id="attack22">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                        <select id="attack23">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                    </label>
+                </div>
+                <h2>Round III</h2>
+                <div class="row">
+                    <label><h4>Defence:</h4>
+                <select id="defense31">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                        <select id="defense32">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                        <select id="defense33">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                    </label>
+                    <label><h4>Attack:</h4>
+                        <select id="attack31">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                        <select id="attack32">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                        <select id="attack33">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                    </label>
+                </div>
+            </form>
+        </div>`
 };
 
 module.exports = authForms;

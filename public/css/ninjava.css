@@ -176,6 +176,25 @@ a {
 /*  END OF New Character  */
 
 
+/*  Moves Selection  */
+.moves-selection{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+    .moves-selection form row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .moves-selection form select{
+        width: 30%;
+    }
+
+/*  END OF Moves Selection  */
+
+
 /* Footer */
 .footer{
     display: flex;

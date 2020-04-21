@@ -1,5 +1,5 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const htmls = require('./htmls');
+const htmls = require('./views/htmls');
 
 
 function changeHeight(element, newHeight) {
@@ -62,95 +62,13 @@ const splashToNewCharacter = function() {
 };
 
 module.exports = splashToNewCharacter;
-},{"./htmls":2}],2:[function(require,module,exports){
+},{"./views/htmls":2}],2:[function(require,module,exports){
 
 const authForms = {
 
     'justPlay': `
         <div class="auth-form">
                     <h1 id="clickNPlay">Click to play!</h1>
-        </div>      
-    `,
-    'singIn': `
-        <div class="auth-form" id="auth-form">
-            <form >
-                <h1>Sign In!</h1>
-                <a id="swap" href="#">No account? Sign up here</a>
-                
-                <input type="hidden" id="action" value="login" />
-                
-                <div class="row">
-                    <i class="fas fa-envelope"></i>
-                    <input 
-                        type="text" 
-                        id="email" 
-                        placeholder="Email"
-                    />
-                </div>
-
-                <div class="row">
-                    <i class="fas fa-lock"></i>
-                    <input
-                        type="password" 
-                        id="password" 
-                        placeholder="Password"
-                    />
-                </div>
-                
-                <div class="row">
-                    <input type="submit" value="Sign In" />
-                </div>
-            </form>
-        </div>      
-    `,
-    'singUp': `
-        <div class="info-wrap auth-form" id="auth-form">
-            <form >
-                <h1>Sign Up</h1>
-                <a id="swap" href="#">Have an account? Sign in here</a>
-
-                <input type="hidden" id="action" value="register" />
-
-                <div class="row">
-                    <i class="fas fa-envelope"></i>
-                    <input 
-                        type="text" 
-                        id="email" 
-                        placeholder="Email"
-                    />
-                </div>
-
-                <div class="row">
-                    <i class="fas fa-user"></i>
-                    <input 
-                        type="text" 
-                        id="handle" 
-                        placeholder="Handle"
-                    />
-                </div>
-
-                <div class="row">
-                    <i class="fas fa-lock"></i>
-                    <input 
-                        type="password" 
-                        id="password" 
-                        placeholder="Enter a password" 
-                    />
-                </div>
-
-                <div class="row">
-                    <i class="fas fa-lock"></i>
-                    <input 
-                        type="password" 
-                        id="password2"
-                        placeholder="Confirm your password" 
-                    />
-                </div>
-
-                <div class="row">
-                    <input type="submit" value="Sign Up" />
-                </div>
-            </form>
         </div>      
     `,
     'characters':{
@@ -193,7 +111,7 @@ const authForms = {
                                 </div>
                             </div>
                             <div class="character-select">
-                                <button>Select</button>
+                                <button id="chosen">Select</button>
                             </div>
                         </div>
                     </div>
@@ -235,7 +153,7 @@ const authForms = {
                     </div>
                 </div>
                 <div class="character-select">
-                    <button>Select</button>
+                    <button id="chosen">Select</button>
                 </div>
             </div>`,
         'Wy-Te Pel':
@@ -272,7 +190,7 @@ const authForms = {
                     </div>
                 </div>
                 <div class="character-select">
-                    <button>Select</button>
+                    <button id="chosen">Select</button>
                 </div>
             </div>`,
         'Poin Tee-Hut':
@@ -281,7 +199,7 @@ const authForms = {
             </div>
             <div class="character-info">
                 <h1>Poin Tee-Hut</h1>
-                <p>Born in a family of farmers, Poin learned to respect nature and everything that comes from the it. Normally very neutral and uninvolved his only feud is with those who disrespect Mother Earth.</p>
+                <p>Born in a family of farmers, Poin learned to respect nature and everything that comes from it. Normally considered very neutral and uninvolved his only feud is with those who disrespect Mother Earth.</p>
                 <div class="character-specs">
                     <div class="skill">
                         <h4>Attack:</h4> 
@@ -309,7 +227,7 @@ const authForms = {
                     </div>
                 </div>
                 <div class="character-select">
-                    <button>Select</button>
+                    <button id="chosen">Select</button>
                 </div>
             </div>`,
         'Gonz O-Bits':
@@ -318,7 +236,7 @@ const authForms = {
             </div>
             <div class="character-info">
                 <h1>Gon Zo-Bits</h1>
-                <p>Always first of his class Gonz had a great passion for science and technology. He found himself with no choise to learn martial arts to be able to defend himself from his daily bullies. Mixing his two best skills he can easily a very deadly machine</p>
+                <p>Always first of his class, with a great passion for science and technology. He found himself with no choise to learn martial arts to be able to defend himself from his daily bullies. Mixing his two best skills he can easily become a very deadly machine</p>
                 <div class="character-specs">
                     <div class="skill">
                         <h4>Attack:</h4> 
@@ -346,7 +264,7 @@ const authForms = {
                     </div>
                 </div>
                 <div class="character-select">
-                    <button>Select</button>
+                    <button id="chosen">Select</button>
                 </div>
             </div>`,
         'Rico Star':
@@ -355,7 +273,7 @@ const authForms = {
             </div>
             <div class="character-info">
                 <h1>Rico Star</h1>
-                <p>As a wealthy and resourceful man, Rico never really knew what path to give to his life. But an unhealthy amount of comic books "reaarch", as he called it, made it clear for him, to become the greatest vigilante there ever was. </p>
+                <p>As a wealthy and resourceful man, Rico never really knew what path to give to his life. But an unhealthy amount of comic books "research", as he called it, made it clear for him, to become the greatest vigilante there ever was. </p>
                 <div class="character-specs">
                     <div class="skill">
                         <h4>Attack:</h4> 
@@ -383,7 +301,7 @@ const authForms = {
                     </div>
                 </div>
                 <div class="character-select">
-                    <button>Select</button>
+                    <button id="chosen">Select</button>
                 </div>
             </div>`,
         'Kateena':
@@ -420,17 +338,153 @@ const authForms = {
                     </div>
                 </div>
                 <div class="character-select">
-                    <button>Select</button>
+                    <button id="chosen">Select</button>
                 </div>
             </div>`,
-    }
+    },
+    'movesSelection':
+        `<div class="moves-selection" id="moves">
+            <form>
+                <h2>Round I</h2>
+                <div class="row">
+                    <label><h4>Defence:</h4>
+                        <select id="defense11">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                        <select id="defense12">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                        <select id="defense13">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                    </label>
+                    <label><h4>Attack:</h4>
+                               <select id="attack11">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                        <select id="attack12">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                        <select id="attack13">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                    </label>
+                </div>
+                <h2>Round II</h2>
+                <div class="row">
+                    <label><h4>Defence:</h4>
+                <select id="defense21">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                        <select id="defense22">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                        <select id="defense23">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                    </label>
+                    <label><h4>Attack:</h4>
+                        <select id="attack21">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                        <select id="attack22">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                        <select id="attack23">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                    </label>
+                </div>
+                <h2>Round III</h2>
+                <div class="row">
+                    <label><h4>Defence:</h4>
+                <select id="defense31">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                        <select id="defense32">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                        <select id="defense33">
+                            <option value="Upper block">Upper Block</option>
+                            <option value="Mid block">Mid Block</option>
+                            <option value="Jump">Jump</option>
+                        </select>
+                    </label>
+                    <label><h4>Attack:</h4>
+                        <select id="attack31">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                        <select id="attack32">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                        <select id="attack33">
+                            <option value="Jump">Jump</option>
+                            <option value="Mid Attack">Mid Attack</option>
+                            <option value="Slide">Slide</option>
+                        </select>
+                    </label>
+                </div>
+            </form>
+        </div>`
 };
 
 module.exports = authForms;
 },{}],3:[function(require,module,exports){
 const htmls = require('./htmls');
-const splashToNewCharacter = require('./animations');
 
+/*************************************/
+/* CHOOSE FIGHTER SCREEN             */
+/*************************************/
+const movesSelection = function (character) {
+
+    const movesContent = document.getElementsByClassName('character-info')[0];
+
+    movesContent.innerHTML = htmls.movesSelection;
+    document.getElementsByClassName('arrows')[0].innerHTML = "";
+    document.getElementsByClassName('arrows')[1].innerHTML = "";
+};
+
+module.exports = movesSelection;
+},{"./htmls":2}],4:[function(require,module,exports){
+const htmls = require('./htmls');
+const splashToNewCharacter = require('../animations');
+const movesSelection = require('./moves_selection');
+
+/*************************************/
+/* CHOOSE FIGHTER SCREEN             */
+/*************************************/
 const newCharacter = function() {
     
     const charactersList = ['Hanzo',
@@ -439,36 +493,42 @@ const newCharacter = function() {
                             'Gonz O-Bits',
                             'Rico Star',
                             'Kateena',];
+        
     let currentCharacter = splashToNewCharacter();
-
     //console.log(currentCharacter);
 
-    const leftArrow = document.getElementById('left-arrow');
-    console.log(leftArrow);
-    const rightArrow = document.getElementById('right-arrow');
-    console.log(rightArrow);
-
-
-    leftArrow.addEventListener("click", e => {
+    document.getElementById('left-arrow').addEventListener("click", () => {
         
         if (currentCharacter !== 0) currentCharacter--;
 
         document.getElementsByClassName('character-profile')[0].innerHTML = htmls.characters[charactersList[currentCharacter]];
+
+        document.getElementById('chosen').addEventListener("click", () => {
+            movesSelection(charactersList[currentCharacter]);
+        });
+        
     });
 
-    rightArrow.addEventListener("click", e => {
+    document.getElementById('right-arrow').addEventListener("click", () => {
 
         if (currentCharacter !== charactersList.length - 1) currentCharacter++;
 
         document.getElementsByClassName('character-profile')[0].innerHTML = htmls.characters[charactersList[currentCharacter]];
+
+        document.getElementById('chosen').addEventListener("click", () => {
+            movesSelection(charactersList[currentCharacter]);
+        });        
+
     });
 
 };
 
 module.exports = newCharacter;
-},{"./animations":1,"./htmls":2}],4:[function(require,module,exports){
-const htmls = require('./app/htmls');
-const newCharacter = require('./app/screens');
+
+
+},{"../animations":1,"./htmls":2,"./moves_selection":3}],5:[function(require,module,exports){
+const htmls = require('./app/views/htmls');
+const newCharacter = require('./app/views/new_character');
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -479,7 +539,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const playButton = document.getElementById('clickNPlay');
 
+    console.log(newCharacter);
+
     playButton.onclick = newCharacter;     
    
 });
-},{"./app/htmls":2,"./app/screens":3}]},{},[4]);
+},{"./app/views/htmls":2,"./app/views/new_character":4}]},{},[5]);
