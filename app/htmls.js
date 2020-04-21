@@ -136,7 +136,7 @@ const authForms = {
                     <i class="fas fa-chevron-circle-right" id="right-arrow"></i>
                 </div>                
             </div>`,        
-        'hanzo':
+        'Hanzo':
             `<div class="character-image">
                 <img src="/characters/hanzo/hanzo.gif" />  
             </div>
@@ -173,7 +173,155 @@ const authForms = {
                     <button>Select</button>
                 </div>
             </div>`,
-        'kateena':
+        'Wy-Te Pel':
+            `<div class="character-image">
+                <img src="/characters/wy-te/wy-te.gif" />  
+            </div>
+            <div class="character-info">
+                <h1>Wy-Te Pel</h1>
+                <p>Al she wanted was a calm, peaceful life, but the path her twin sister took forced her to follow after and help keep her safe. Binded by a promise made to her dad who died, on her arms when she was just a kid, sealing her fate.</p>
+                <div class="character-specs">
+                    <div class="skill">
+                        <h4>Attack:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:65%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Defense:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:70%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Agility:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:97%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Speed:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:95%;'></div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="character-select">
+                    <button>Select</button>
+                </div>
+            </div>`,
+        'Poin Tee-Hut':
+            `<div class="character-image">
+                <img src="/characters/poin/poin.gif" />  
+            </div>
+            <div class="character-info">
+                <h1>Poin Tee-Hut</h1>
+                <p>Born in a family of farmers, Poin learned to respect nature and everything that comes from it. Normally considered very neutral and uninvolved his only feud is with those who disrespect Mother Earth.</p>
+                <div class="character-specs">
+                    <div class="skill">
+                        <h4>Attack:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:90%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Defense:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:65%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Agility:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:93%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Speed:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:87%;'></div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="character-select">
+                    <button>Select</button>
+                </div>
+            </div>`,
+        'Gonz O-Bits':
+            `<div class="character-image">
+                <img src="/characters/gonzo/gonzo.gif" />  
+            </div>
+            <div class="character-info">
+                <h1>Gon Zo-Bits</h1>
+                <p>Always first of his class, with a great passion for science and technology. He found himself with no choise to learn martial arts to be able to defend himself from his daily bullies. Mixing his two best skills he can easily become a very deadly machine</p>
+                <div class="character-specs">
+                    <div class="skill">
+                        <h4>Attack:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:75%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Defense:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:95%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Agility:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:80%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Speed:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:83%;'></div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="character-select">
+                    <button>Select</button>
+                </div>
+            </div>`,
+        'Rico Star':
+            `<div class="character-image">
+                <img src="/characters/rico/rico.gif" />  
+            </div>
+            <div class="character-info">
+                <h1>Rico Star</h1>
+                <p>As a wealthy and resourceful man, Rico never really knew what path to give to his life. But an unhealthy amount of comic books "research", as he called it, made it clear for him, to become the greatest vigilante there ever was. </p>
+                <div class="character-specs">
+                    <div class="skill">
+                        <h4>Attack:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:80%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Defense:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:98%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Agility:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:75%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Speed:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:95%;'></div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="character-select">
+                    <button>Select</button>
+                </div>
+            </div>`,
+        'Kateena':
             `<div class="character-image">
                 <img src="/characters/kateena/kateena.gif" />  
             </div>
@@ -209,8 +357,7 @@ const authForms = {
                 <div class="character-select">
                     <button>Select</button>
                 </div>
-            </div>
-        </div>`,             
+            </div>`,
     }
 };
 

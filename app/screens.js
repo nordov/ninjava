@@ -3,7 +3,12 @@ const splashToNewCharacter = require('./animations');
 
 const newCharacter = function() {
     
-    const charactersList = ['hanzo','kateena'];
+    const charactersList = ['Hanzo',
+                            'Wy-Te Pel',
+                            'Poin Tee-Hut',
+                            'Gonz O-Bits',
+                            'Rico Star',
+                            'Kateena',];
     let currentCharacter = splashToNewCharacter();
 
     //console.log(currentCharacter);

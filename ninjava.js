@@ -10,6 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const playButton = document.getElementById('clickNPlay');
 
-    playButton.onclick = newCharacter();     
+    playButton.onclick = newCharacter;     
    
 });
