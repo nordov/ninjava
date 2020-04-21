@@ -54,7 +54,7 @@ const splashToNewCharacter = function() {
     changeHeight(wrap, 450);
     changeWidth(wrap, 900)        
     fadeOut(wrapContent);
-    wrapContent.innerHTML = htmls.characters.hanzo;
+    wrapContent.innerHTML = htmls.characters.default;
     fadeIn(wrapContent);
 
     return 0;
@@ -154,12 +154,12 @@ const authForms = {
         </div>      
     `,
     'characters':{
-        'hanzo':
+        'default':
             `<div class="new-character">
                 <div class="arrows">
                     <i class="fas fa-chevron-circle-left" id="left-arrow"></i>
                 </div>        
-                    <div class="character-profile">
+                    <div class="character-profile" id="character-profile">
                         <div class="character-image">
                             <img src="/characters/hanzo/hanzo.gif" />  
                         </div>
@@ -200,54 +200,82 @@ const authForms = {
                 <div class="arrows">
                     <i class="fas fa-chevron-circle-right" id="right-arrow"></i>
                 </div>                
+            </div>`,        
+        'hanzo':
+            `<div class="character-image">
+                <img src="/characters/hanzo/hanzo.gif" />  
+            </div>
+            <div class="character-info">
+                <h1>Hanzo Lori</h1>
+                <p>From the cold alleys of Brooklyn, Hanzo Lori grew with the merciless Triads. After his uncle was murder by the same group he swore loyalty to, Hanzo made a promise to use his deadly skills to finish those who thought them to him!</p>
+                <div class="character-specs">
+                    <div class="skill">
+                        <h4>Attack:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:95%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Defense:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:90%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Agility:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:75%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Speed:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:70%;'></div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="character-select">
+                    <button>Select</button>
+                </div>
             </div>`,
         'kateena':
-            `<div class="new-character">
-                <div class="arrows">
-                    <i class="fas fa-chevron-circle-left" id="left-arrow"></i>
-                </div>        
-                    <div class="character-profile">
-                        <div class="character-image">
-                            <img src="/characters/kateena/kateena.gif" />  
-                        </div>
-                        <div class="character-info">
-                            <h1>Kateena</h1>
-                            <p>Her dad was an accountant for the most dangerous drug lord in South America until his best friend, falsely accused him of stealing from his client. Her whole family was brutally murdered in front of her. Now she has dedicated her life to have all her dad's enemies pay for their one mistake... Spare her live.</p>
-                            <div class="character-specs">
-                                <div class="skill">
-                                    <h4>Attack:</h4> 
-                                    <div class='bar'>
-                                        <div class='percent' style='width:65%;'></div>
-                                    </div> 
-                                </div>
-                                <div class="skill">
-                                    <h4>Defense:</h4> 
-                                    <div class='bar'>
-                                        <div class='percent' style='width:70%;'></div>
-                                    </div> 
-                                </div>
-                                <div class="skill">
-                                    <h4>Agility:</h4> 
-                                    <div class='bar'>
-                                        <div class='percent' style='width:97%;'></div>
-                                    </div> 
-                                </div>
-                                <div class="skill">
-                                    <h4>Speed:</h4> 
-                                    <div class='bar'>
-                                        <div class='percent' style='width:95%;'></div>
-                                    </div> 
-                                </div>
-                            </div>
-                            <div class="character-select">
-                                <button>Select</button>
-                            </div>
-                        </div>
+            `<div class="character-image">
+                <img src="/characters/kateena/kateena.gif" />  
+            </div>
+            <div class="character-info">
+                <h1>Kateena</h1>
+                <p>Her dad was an accountant for the most dangerous drug lord in South America until his best friend, falsely accused him of stealing from his client. Her whole family was brutally murdered in front of her. Now she has dedicated her life to have all her dad's enemies pay for their one mistake... Spare her live.</p>
+                <div class="character-specs">
+                    <div class="skill">
+                        <h4>Attack:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:65%;'></div>
+                        </div> 
                     </div>
-                <div class="arrows">
-                    <i class="fas fa-chevron-circle-right" id="right-arrow"></i>
-                </div>                
-            </div>`,             
+                    <div class="skill">
+                        <h4>Defense:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:70%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Agility:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:97%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Speed:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:95%;'></div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="character-select">
+                    <button>Select</button>
+                </div>
+            </div>
+        </div>`,             
     }
 };
 
@@ -270,25 +298,17 @@ const newCharacter = function() {
 
 
     leftArrow.addEventListener("click", e => {
-
-        alert("Left");
-        const wrapContent = document.getElementById('wrap-content');
-
+        
         if (currentCharacter !== 0) currentCharacter--;
 
-        wrapContent.innerHTML = htmls.characters[charactersList[currentCharacter]];
+        document.getElementsByClassName('character-profile')[0].innerHTML = htmls.characters[charactersList[currentCharacter]];
     });
 
     rightArrow.addEventListener("click", e => {
 
-        alert("Right");
-        const wrapContent = document.getElementById('wrap-content');
-
-        console.log(charactersList);
-
         if (currentCharacter !== charactersList.length - 1) currentCharacter++;
 
-        wrapContent.innerHTML = htmls.characters[charactersList[currentCharacter]];
+        document.getElementsByClassName('character-profile')[0].innerHTML = htmls.characters[charactersList[currentCharacter]];
     });
 
 };
@@ -307,7 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const playButton = document.getElementById('clickNPlay');
 
-    playButton.onclick = newCharacter;     
+    playButton.onclick = newCharacter();     
    
 });
 },{"./app/htmls":2,"./app/screens":3}]},{},[4]);

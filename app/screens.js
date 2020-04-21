@@ -15,25 +15,17 @@ const newCharacter = function() {
 
 
     leftArrow.addEventListener("click", e => {
-
-        alert("Left");
-        const wrapContent = document.getElementById('wrap-content');
-
+        
         if (currentCharacter !== 0) currentCharacter--;
 
-        wrapContent.innerHTML = htmls.characters[charactersList[currentCharacter]];
+        document.getElementsByClassName('character-profile')[0].innerHTML = htmls.characters[charactersList[currentCharacter]];
     });
 
     rightArrow.addEventListener("click", e => {
 
-        alert("Right");
-        const wrapContent = document.getElementById('wrap-content');
-
-        console.log(charactersList);
-
         if (currentCharacter !== charactersList.length - 1) currentCharacter++;
 
-        wrapContent.innerHTML = htmls.characters[charactersList[currentCharacter]];
+        document.getElementsByClassName('character-profile')[0].innerHTML = htmls.characters[charactersList[currentCharacter]];
     });
 
 };
