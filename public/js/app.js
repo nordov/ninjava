@@ -54,8 +54,10 @@ const splashToNewCharacter = function() {
     changeHeight(wrap, 450);
     changeWidth(wrap, 900)        
     fadeOut(wrapContent);
-    wrapContent.innerHTML = htmls.newCharacter;
-    fadeIn(wrapContent, htmls.newCharacter);
+    wrapContent.innerHTML = htmls.characters.default;
+    fadeIn(wrapContent);
+
+    return 0;
  
 };
 
@@ -151,69 +153,322 @@ const authForms = {
             </form>
         </div>      
     `,
-    'newCharacter':`
-        <div class="new-character">
-            <div class="arrows left-arrow">
-                <i class="fas fa-chevron-circle-left"></i>
-            </div>        
-                <div class="character-profile">
-                    <div class="character-image">
-                        <img src="/characters/hanzo/hanzo.gif" />  
+    'characters':{
+        'default':
+            `<div class="new-character">
+                <div class="arrows">
+                    <i class="fas fa-chevron-circle-left" id="left-arrow"></i>
+                </div>        
+                    <div class="character-profile" id="character-profile">
+                        <div class="character-image">
+                            <img src="/characters/hanzo/hanzo.gif" />  
+                        </div>
+                        <div class="character-info">
+                            <h1>Hanzo Lori</h1>
+                            <p>From the cold alleys of Brooklyn, Hanzo Lori grew with the merciless Triads. After his uncle was murder by the same group he swore loyalty to, Hanzo made a promise to use his deadly skills to finish those who thought them to him!</p>
+                            <div class="character-specs">
+                                <div class="skill">
+                                    <h4>Attack:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:95%;'></div>
+                                    </div> 
+                                </div>
+                                <div class="skill">
+                                    <h4>Defense:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:90%;'></div>
+                                    </div> 
+                                </div>
+                                <div class="skill">
+                                    <h4>Agility:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:75%;'></div>
+                                    </div> 
+                                </div>
+                                <div class="skill">
+                                    <h4>Speed:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:70%;'></div>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="character-select">
+                                <button>Select</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="character-info">
-                        <h4>Choose your fighter!</h4>
-                        <h1>Hanzo Lori</h1>
-                        <p>From the cold alleys of Brooklyn, Hanzo Lori grew with the merciless Triads. After his uncle was murder by the same group he swore loyalty to, Hanzo made a promise to use his deadly skills to finish those who thought them to him!</p>
-                        <div class="character-specs">
-                            <div class="skill">
-                                <h4>Attack:</h4> 
-                                <div class='bar'>
-                                    <div class='percent' style='width:75%;'></div>
-                                </div> 
-                            </div>
-                            <div class="skill">
-                                <h4>Defense:</h4> 
-                                <div class='bar'>
-                                    <div class='percent' style='width:80%;'></div>
-                                </div> 
-                            </div>
-                            <div class="skill">
-                                <h4>Agility:</h4> 
-                                <div class='bar'>
-                                    <div class='percent' style='width:93%;'></div>
-                                </div> 
-                            </div>
-                            <div class="skill">
-                                <h4>Speed:</h4> 
-                                <div class='bar'>
-                                    <div class='percent' style='width:80%;'></div>
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="character-select">
-                            <button>Select</button>
-                        </div>
+                <div class="arrows">
+                    <i class="fas fa-chevron-circle-right" id="right-arrow"></i>
+                </div>                
+            </div>`,        
+        'Hanzo':
+            `<div class="character-image">
+                <img src="/characters/hanzo/hanzo.gif" />  
+            </div>
+            <div class="character-info">
+                <h1>Hanzo Lori</h1>
+                <p>From the cold alleys of Brooklyn, Hanzo Lori grew with the merciless Triads. After his uncle was murder by the same group he swore loyalty to, Hanzo made a promise to use his deadly skills to finish those who thought them to him!</p>
+                <div class="character-specs">
+                    <div class="skill">
+                        <h4>Attack:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:95%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Defense:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:90%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Agility:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:75%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Speed:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:70%;'></div>
+                        </div> 
                     </div>
                 </div>
-            <div class="arrows right-arrow">
-                <i class="fas fa-chevron-circle-right"></i>
-            </div>                
-        </div>    
-    `,
+                <div class="character-select">
+                    <button>Select</button>
+                </div>
+            </div>`,
+        'Wy-Te Pel':
+            `<div class="character-image">
+                <img src="/characters/wy-te/wy-te.gif" />  
+            </div>
+            <div class="character-info">
+                <h1>Wy-Te Pel</h1>
+                <p>Al she wanted was a calm, peaceful life, but the path her twin sister took forced her to follow after and help keep her safe. Binded by a promise made to her dad who died, on her arms when she was just a kid, sealing her fate.</p>
+                <div class="character-specs">
+                    <div class="skill">
+                        <h4>Attack:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:65%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Defense:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:70%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Agility:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:97%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Speed:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:95%;'></div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="character-select">
+                    <button>Select</button>
+                </div>
+            </div>`,
+        'Poin Tee-Hut':
+            `<div class="character-image">
+                <img src="/characters/poin/poin.gif" />  
+            </div>
+            <div class="character-info">
+                <h1>Poin Tee-Hut</h1>
+                <p>Born in a family of farmers, Poin learned to respect nature and everything that comes from the it. Normally very neutral and uninvolved his only feud is with those who disrespect Mother Earth.</p>
+                <div class="character-specs">
+                    <div class="skill">
+                        <h4>Attack:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:90%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Defense:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:65%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Agility:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:93%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Speed:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:87%;'></div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="character-select">
+                    <button>Select</button>
+                </div>
+            </div>`,
+        'Gonz O-Bits':
+            `<div class="character-image">
+                <img src="/characters/gonzo/gonzo.gif" />  
+            </div>
+            <div class="character-info">
+                <h1>Gon Zo-Bits</h1>
+                <p>Always first of his class Gonz had a great passion for science and technology. He found himself with no choise to learn martial arts to be able to defend himself from his daily bullies. Mixing his two best skills he can easily a very deadly machine</p>
+                <div class="character-specs">
+                    <div class="skill">
+                        <h4>Attack:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:75%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Defense:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:95%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Agility:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:80%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Speed:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:83%;'></div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="character-select">
+                    <button>Select</button>
+                </div>
+            </div>`,
+        'Rico Star':
+            `<div class="character-image">
+                <img src="/characters/rico/rico.gif" />  
+            </div>
+            <div class="character-info">
+                <h1>Rico Star</h1>
+                <p>As a wealthy and resourceful man, Rico never really knew what path to give to his life. But an unhealthy amount of comic books "reaarch", as he called it, made it clear for him, to become the greatest vigilante there ever was. </p>
+                <div class="character-specs">
+                    <div class="skill">
+                        <h4>Attack:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:80%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Defense:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:98%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Agility:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:75%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Speed:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:95%;'></div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="character-select">
+                    <button>Select</button>
+                </div>
+            </div>`,
+        'Kateena':
+            `<div class="character-image">
+                <img src="/characters/kateena/kateena.gif" />  
+            </div>
+            <div class="character-info">
+                <h1>Kateena</h1>
+                <p>Her dad was an accountant for the most dangerous drug lord in South America until his best friend, falsely accused him of stealing from his client. Her whole family was brutally murdered in front of her. Now she has dedicated her life to have all her dad's enemies pay for their one mistake... Spare her live.</p>
+                <div class="character-specs">
+                    <div class="skill">
+                        <h4>Attack:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:65%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Defense:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:70%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Agility:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:97%;'></div>
+                        </div> 
+                    </div>
+                    <div class="skill">
+                        <h4>Speed:</h4> 
+                        <div class='bar'>
+                            <div class='percent' style='width:95%;'></div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="character-select">
+                    <button>Select</button>
+                </div>
+            </div>`,
+    }
 };
 
 module.exports = authForms;
 },{}],3:[function(require,module,exports){
+const htmls = require('./htmls');
 const splashToNewCharacter = require('./animations');
 
 const newCharacter = function() {
-    splashToNewCharacter();
+    
+    const charactersList = ['Hanzo',
+                            'Wy-Te Pel',
+                            'Poin Tee-Hut',
+                            'Gonz O-Bits',
+                            'Rico Star',
+                            'Kateena',];
+    let currentCharacter = splashToNewCharacter();
+
+    //console.log(currentCharacter);
+
+    const leftArrow = document.getElementById('left-arrow');
+    console.log(leftArrow);
+    const rightArrow = document.getElementById('right-arrow');
+    console.log(rightArrow);
+
+
+    leftArrow.addEventListener("click", e => {
+        
+        if (currentCharacter !== 0) currentCharacter--;
+
+        document.getElementsByClassName('character-profile')[0].innerHTML = htmls.characters[charactersList[currentCharacter]];
+    });
+
+    rightArrow.addEventListener("click", e => {
+
+        if (currentCharacter !== charactersList.length - 1) currentCharacter++;
+
+        document.getElementsByClassName('character-profile')[0].innerHTML = htmls.characters[charactersList[currentCharacter]];
+    });
+
 };
 
 module.exports = newCharacter;
-},{"./animations":1}],4:[function(require,module,exports){
+},{"./animations":1,"./htmls":2}],4:[function(require,module,exports){
 const htmls = require('./app/htmls');
-const newCharacter = require('./app/new_character');
+const newCharacter = require('./app/screens');
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -227,4 +482,4 @@ document.addEventListener("DOMContentLoaded", () => {
     playButton.onclick = newCharacter;     
    
 });
-},{"./app/htmls":2,"./app/new_character":3}]},{},[4]);
+},{"./app/htmls":2,"./app/screens":3}]},{},[4]);
