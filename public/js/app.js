@@ -56,9 +56,7 @@ const splashToNewCharacter = function() {
     fadeOut(wrapContent);
     wrapContent.innerHTML = "";  
     wrapContent.innerHTML = htmls.characters.default;
-    setTimeout(() => { fadeIn(wrapContent); }, 3000);
-    
-    
+    setTimeout(() => { fadeIn(wrapContent); }, 3000);    
 
     return 0;
  
@@ -348,117 +346,148 @@ const authForms = {
     'movesSelection':
         `<div class="moves-selection" id="moves">
             <form>
-                <h2>Round I</h2>
-                <div class="row">
-                    <label><h4>Defence:</h4>
-                        <select id="defense11">
-                            <option value="Upper block">Upper Block</option>
-                            <option value="Mid block">Mid Block</option>
-                            <option value="Jump">Jump</option>
-                        </select>
-                        <select id="defense12">
-                            <option value="Upper block">Upper Block</option>
-                            <option value="Mid block">Mid Block</option>
-                            <option value="Jump">Jump</option>
-                        </select>
-                        <select id="defense13">
-                            <option value="Upper block">Upper Block</option>
-                            <option value="Mid block">Mid Block</option>
-                            <option value="Jump">Jump</option>
-                        </select>
-                    </label>
-                    <label><h4>Attack:</h4>
-                               <select id="attack11">
-                            <option value="Jump">Jump</option>
-                            <option value="Mid Attack">Mid Attack</option>
-                            <option value="Slide">Slide</option>
-                        </select>
-                        <select id="attack12">
-                            <option value="Jump">Jump</option>
-                            <option value="Mid Attack">Mid Attack</option>
-                            <option value="Slide">Slide</option>
-                        </select>
-                        <select id="attack13">
-                            <option value="Jump">Jump</option>
-                            <option value="Mid Attack">Mid Attack</option>
-                            <option value="Slide">Slide</option>
-                        </select>
-                    </label>
+                <h3>Choose your battle moves!</h3>
+                <div class="round">
+                    <div class="round-label">
+                        <h3>Round I</h3>
+                    </div>
+                    <div class="selections">
+                        <div class="row">
+                            <label><h4>Defense:</h4></label>
+                            <select id="defense11">
+                                <option value="Upper block">Upper Block</option>
+                                <option value="Mid block">Mid Block</option>
+                                <option value="Jump">Jump</option>
+                            </select>
+                            <select id="defense12">
+                                <option value="Upper block">Upper Block</option>
+                                <option value="Mid block">Mid Block</option>
+                                <option value="Jump">Jump</option>
+                            </select>
+                            <select id="defense13">
+                                <option value="Upper block">Upper Block</option>
+                                <option value="Mid block">Mid Block</option>
+                                <option value="Jump">Jump</option>
+                            </select>
+                        </div>
+
+                        <div class="row">
+                            <label><h4>Attack:</h4></label>
+                            <select id="attack11">
+                                <option value="Jump">Jump</option>
+                                <option value="Mid Attack">Mid Attack</option>
+                                <option value="Slide">Slide</option>
+                            </select>
+                            <select id="attack12">
+                                <option value="Jump">Jump</option>
+                                <option value="Mid Attack">Mid Attack</option>
+                                <option value="Slide">Slide</option>
+                            </select>
+                            <select id="attack13">
+                                <option value="Jump">Jump</option>
+                                <option value="Mid Attack">Mid Attack</option>
+                                <option value="Slide">Slide</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <h2>Round II</h2>
-                <div class="row">
-                    <label><h4>Defence:</h4>
-                <select id="defense21">
-                            <option value="Upper block">Upper Block</option>
-                            <option value="Mid block">Mid Block</option>
-                            <option value="Jump">Jump</option>
-                        </select>
-                        <select id="defense22">
-                            <option value="Upper block">Upper Block</option>
-                            <option value="Mid block">Mid Block</option>
-                            <option value="Jump">Jump</option>
-                        </select>
-                        <select id="defense23">
-                            <option value="Upper block">Upper Block</option>
-                            <option value="Mid block">Mid Block</option>
-                            <option value="Jump">Jump</option>
-                        </select>
-                    </label>
-                    <label><h4>Attack:</h4>
-                        <select id="attack21">
-                            <option value="Jump">Jump</option>
-                            <option value="Mid Attack">Mid Attack</option>
-                            <option value="Slide">Slide</option>
-                        </select>
-                        <select id="attack22">
-                            <option value="Jump">Jump</option>
-                            <option value="Mid Attack">Mid Attack</option>
-                            <option value="Slide">Slide</option>
-                        </select>
-                        <select id="attack23">
-                            <option value="Jump">Jump</option>
-                            <option value="Mid Attack">Mid Attack</option>
-                            <option value="Slide">Slide</option>
-                        </select>
-                    </label>
+                
+
+              <div class="round">
+                    <div class="round-label">
+                        <h3>Round II</h3>
+                    </div>
+                    <div class="selections">
+                        <div class="row">
+                            <label><h4>Defense:</h4></label>
+                            <select id="defense11">
+                                <option value="Upper block">Upper Block</option>
+                                <option value="Mid block">Mid Block</option>
+                                <option value="Jump">Jump</option>
+                            </select>
+                            <select id="defense12">
+                                <option value="Upper block">Upper Block</option>
+                                <option value="Mid block">Mid Block</option>
+                                <option value="Jump">Jump</option>
+                            </select>
+                            <select id="defense13">
+                                <option value="Upper block">Upper Block</option>
+                                <option value="Mid block">Mid Block</option>
+                                <option value="Jump">Jump</option>
+                            </select>
+                        </div>
+
+                        <div class="row">
+                            <label><h4>Attack:</h4></label>
+                            <select id="attack11">
+                                <option value="Jump">Jump</option>
+                                <option value="Mid Attack">Mid Attack</option>
+                                <option value="Slide">Slide</option>
+                            </select>
+                            <select id="attack12">
+                                <option value="Jump">Jump</option>
+                                <option value="Mid Attack">Mid Attack</option>
+                                <option value="Slide">Slide</option>
+                            </select>
+                            <select id="attack13">
+                                <option value="Jump">Jump</option>
+                                <option value="Mid Attack">Mid Attack</option>
+                                <option value="Slide">Slide</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <h2>Round III</h2>
-                <div class="row">
-                    <label><h4>Defence:</h4>
-                <select id="defense31">
-                            <option value="Upper block">Upper Block</option>
-                            <option value="Mid block">Mid Block</option>
-                            <option value="Jump">Jump</option>
-                        </select>
-                        <select id="defense32">
-                            <option value="Upper block">Upper Block</option>
-                            <option value="Mid block">Mid Block</option>
-                            <option value="Jump">Jump</option>
-                        </select>
-                        <select id="defense33">
-                            <option value="Upper block">Upper Block</option>
-                            <option value="Mid block">Mid Block</option>
-                            <option value="Jump">Jump</option>
-                        </select>
-                    </label>
-                    <label><h4>Attack:</h4>
-                        <select id="attack31">
-                            <option value="Jump">Jump</option>
-                            <option value="Mid Attack">Mid Attack</option>
-                            <option value="Slide">Slide</option>
-                        </select>
-                        <select id="attack32">
-                            <option value="Jump">Jump</option>
-                            <option value="Mid Attack">Mid Attack</option>
-                            <option value="Slide">Slide</option>
-                        </select>
-                        <select id="attack33">
-                            <option value="Jump">Jump</option>
-                            <option value="Mid Attack">Mid Attack</option>
-                            <option value="Slide">Slide</option>
-                        </select>
-                    </label>
+                
+
+                <div class="round">
+                    <div class="round-label">
+                    <h3>Round III</h3>
+                    </div>
+                    <div class="selections">
+                        <div class="row">
+                            <label><h4>Defense:</h4></label>
+                            <select id="defense11">
+                                <option value="Upper block">Upper Block</option>
+                                <option value="Mid block">Mid Block</option>
+                                <option value="Jump">Jump</option>
+                            </select>
+                            <select id="defense12">
+                                <option value="Upper block">Upper Block</option>
+                                <option value="Mid block">Mid Block</option>
+                                <option value="Jump">Jump</option>
+                            </select>
+                            <select id="defense13">
+                                <option value="Upper block">Upper Block</option>
+                                <option value="Mid block">Mid Block</option>
+                                <option value="Jump">Jump</option>
+                            </select>
+                        </div>
+
+                        <div class="row">
+                            <label><h4>Attack:</h4></label>
+                            <select id="attack11">
+                                <option value="Jump">Jump</option>
+                                <option value="Mid Attack">Mid Attack</option>
+                                <option value="Slide">Slide</option>
+                            </select>
+                            <select id="attack12">
+                                <option value="Jump">Jump</option>
+                                <option value="Mid Attack">Mid Attack</option>
+                                <option value="Slide">Slide</option>
+                            </select>
+                            <select id="attack13">
+                                <option value="Jump">Jump</option>
+                                <option value="Mid Attack">Mid Attack</option>
+                                <option value="Slide">Slide</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
+
+
+                <div class="row">
+                    <button id="fight">FIGHT!</button>
+                </div>                               
             </form>
         </div>`
 };

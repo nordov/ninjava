@@ -182,15 +182,51 @@ a {
     justify-content: space-evenly;
 }
 
-    .moves-selection form row{
+    .moves-selection form .round{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-evenly;
     }
 
-    .moves-selection form select{
-        width: 30%;
+    .moves-selection form .round-label{
+        
     }
+
+    .moves-selection form .row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .moves-selection form .selections{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;        
+    }
+
+    .moves-selection form label{
+        width: 25%;
+    }    
+
+    .moves-selection form select{
+        width: 25%;
+    }
+
+    .moves-selection button {
+        height: 30px;
+        width: 100%;
+        background-color: transparent;
+        color: white;
+        border: solid 1 px white;
+        line-height: 20px;
+        font-size: large;
+    }
+
+    .moves-selection button:hover {
+        background-image: linear-gradient(#ffff00, #ff6e02);
+        color: white;    
+    }    
 
 /*  END OF Moves Selection  */
 
