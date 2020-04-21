@@ -1,5 +1,5 @@
 const htmls = require('./app/htmls');
-const newCharacter = require('./app/new_character');
+const newCharacter = require('./app/screens');
 
 
 document.addEventListener("DOMContentLoaded", () => {

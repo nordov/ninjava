@@ -54,8 +54,10 @@ const splashToNewCharacter = function() {
     changeHeight(wrap, 450);
     changeWidth(wrap, 900)        
     fadeOut(wrapContent);
-    wrapContent.innerHTML = htmls.newCharacter;
-    fadeIn(wrapContent, htmls.newCharacter);
+    wrapContent.innerHTML = htmls.characters.hanzo;
+    fadeIn(wrapContent);
+
+    return 0;
  
 };
 
@@ -151,69 +153,150 @@ const authForms = {
             </form>
         </div>      
     `,
-    'newCharacter':`
-        <div class="new-character">
-            <div class="arrows left-arrow">
-                <i class="fas fa-chevron-circle-left"></i>
-            </div>        
-                <div class="character-profile">
-                    <div class="character-image">
-                        <img src="/characters/hanzo/hanzo.gif" />  
-                    </div>
-                    <div class="character-info">
-                        <h4>Choose your fighter!</h4>
-                        <h1>Hanzo Lori</h1>
-                        <p>From the cold alleys of Brooklyn, Hanzo Lori grew with the merciless Triads. After his uncle was murder by the same group he swore loyalty to, Hanzo made a promise to use his deadly skills to finish those who thought them to him!</p>
-                        <div class="character-specs">
-                            <div class="skill">
-                                <h4>Attack:</h4> 
-                                <div class='bar'>
-                                    <div class='percent' style='width:75%;'></div>
-                                </div> 
+    'characters':{
+        'hanzo':
+            `<div class="new-character">
+                <div class="arrows">
+                    <i class="fas fa-chevron-circle-left" id="left-arrow"></i>
+                </div>        
+                    <div class="character-profile">
+                        <div class="character-image">
+                            <img src="/characters/hanzo/hanzo.gif" />  
+                        </div>
+                        <div class="character-info">
+                            <h1>Hanzo Lori</h1>
+                            <p>From the cold alleys of Brooklyn, Hanzo Lori grew with the merciless Triads. After his uncle was murder by the same group he swore loyalty to, Hanzo made a promise to use his deadly skills to finish those who thought them to him!</p>
+                            <div class="character-specs">
+                                <div class="skill">
+                                    <h4>Attack:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:95%;'></div>
+                                    </div> 
+                                </div>
+                                <div class="skill">
+                                    <h4>Defense:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:90%;'></div>
+                                    </div> 
+                                </div>
+                                <div class="skill">
+                                    <h4>Agility:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:75%;'></div>
+                                    </div> 
+                                </div>
+                                <div class="skill">
+                                    <h4>Speed:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:70%;'></div>
+                                    </div> 
+                                </div>
                             </div>
-                            <div class="skill">
-                                <h4>Defense:</h4> 
-                                <div class='bar'>
-                                    <div class='percent' style='width:80%;'></div>
-                                </div> 
-                            </div>
-                            <div class="skill">
-                                <h4>Agility:</h4> 
-                                <div class='bar'>
-                                    <div class='percent' style='width:93%;'></div>
-                                </div> 
-                            </div>
-                            <div class="skill">
-                                <h4>Speed:</h4> 
-                                <div class='bar'>
-                                    <div class='percent' style='width:80%;'></div>
-                                </div> 
+                            <div class="character-select">
+                                <button>Select</button>
                             </div>
                         </div>
-                        <div class="character-select">
-                            <button>Select</button>
+                    </div>
+                <div class="arrows">
+                    <i class="fas fa-chevron-circle-right" id="right-arrow"></i>
+                </div>                
+            </div>`,
+        'kateena':
+            `<div class="new-character">
+                <div class="arrows">
+                    <i class="fas fa-chevron-circle-left" id="left-arrow"></i>
+                </div>        
+                    <div class="character-profile">
+                        <div class="character-image">
+                            <img src="/characters/kateena/kateena.gif" />  
+                        </div>
+                        <div class="character-info">
+                            <h1>Kateena</h1>
+                            <p>Her dad was an accountant for the most dangerous drug lord in South America until his best friend, falsely accused him of stealing from his client. Her whole family was brutally murdered in front of her. Now she has dedicated her life to have all her dad's enemies pay for their one mistake... Spare her live.</p>
+                            <div class="character-specs">
+                                <div class="skill">
+                                    <h4>Attack:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:65%;'></div>
+                                    </div> 
+                                </div>
+                                <div class="skill">
+                                    <h4>Defense:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:70%;'></div>
+                                    </div> 
+                                </div>
+                                <div class="skill">
+                                    <h4>Agility:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:97%;'></div>
+                                    </div> 
+                                </div>
+                                <div class="skill">
+                                    <h4>Speed:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:95%;'></div>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="character-select">
+                                <button>Select</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <div class="arrows right-arrow">
-                <i class="fas fa-chevron-circle-right"></i>
-            </div>                
-        </div>    
-    `,
+                <div class="arrows">
+                    <i class="fas fa-chevron-circle-right" id="right-arrow"></i>
+                </div>                
+            </div>`,             
+    }
 };
 
 module.exports = authForms;
 },{}],3:[function(require,module,exports){
+const htmls = require('./htmls');
 const splashToNewCharacter = require('./animations');
 
 const newCharacter = function() {
-    splashToNewCharacter();
+    
+    const charactersList = ['hanzo','kateena'];
+    let currentCharacter = splashToNewCharacter();
+
+    //console.log(currentCharacter);
+
+    const leftArrow = document.getElementById('left-arrow');
+    console.log(leftArrow);
+    const rightArrow = document.getElementById('right-arrow');
+    console.log(rightArrow);
+
+
+    leftArrow.addEventListener("click", e => {
+
+        alert("Left");
+        const wrapContent = document.getElementById('wrap-content');
+
+        if (currentCharacter !== 0) currentCharacter--;
+
+        wrapContent.innerHTML = htmls.characters[charactersList[currentCharacter]];
+    });
+
+    rightArrow.addEventListener("click", e => {
+
+        alert("Right");
+        const wrapContent = document.getElementById('wrap-content');
+
+        console.log(charactersList);
+
+        if (currentCharacter !== charactersList.length - 1) currentCharacter++;
+
+        wrapContent.innerHTML = htmls.characters[charactersList[currentCharacter]];
+    });
+
 };
 
 module.exports = newCharacter;
-},{"./animations":1}],4:[function(require,module,exports){
+},{"./animations":1,"./htmls":2}],4:[function(require,module,exports){
 const htmls = require('./app/htmls');
-const newCharacter = require('./app/new_character');
+const newCharacter = require('./app/screens');
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -227,4 +310,4 @@ document.addEventListener("DOMContentLoaded", () => {
     playButton.onclick = newCharacter;     
    
 });
-},{"./app/htmls":2,"./app/new_character":3}]},{},[4]);
+},{"./app/htmls":2,"./app/screens":3}]},{},[4]);

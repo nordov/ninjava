@@ -88,55 +88,102 @@ const authForms = {
             </form>
         </div>      
     `,
-    'newCharacter':`
-        <div class="new-character">
-            <div class="arrows left-arrow">
-                <i class="fas fa-chevron-circle-left"></i>
-            </div>        
-                <div class="character-profile">
-                    <div class="character-image">
-                        <img src="/characters/hanzo/hanzo.gif" />  
-                    </div>
-                    <div class="character-info">
-                        <h4>Choose your fighter!</h4>
-                        <h1>Hanzo Lori</h1>
-                        <p>From the cold alleys of Brooklyn, Hanzo Lori grew with the merciless Triads. After his uncle was murder by the same group he swore loyalty to, Hanzo made a promise to use his deadly skills to finish those who thought them to him!</p>
-                        <div class="character-specs">
-                            <div class="skill">
-                                <h4>Attack:</h4> 
-                                <div class='bar'>
-                                    <div class='percent' style='width:75%;'></div>
-                                </div> 
+    'characters':{
+        'hanzo':
+            `<div class="new-character">
+                <div class="arrows">
+                    <i class="fas fa-chevron-circle-left" id="left-arrow"></i>
+                </div>        
+                    <div class="character-profile">
+                        <div class="character-image">
+                            <img src="/characters/hanzo/hanzo.gif" />  
+                        </div>
+                        <div class="character-info">
+                            <h1>Hanzo Lori</h1>
+                            <p>From the cold alleys of Brooklyn, Hanzo Lori grew with the merciless Triads. After his uncle was murder by the same group he swore loyalty to, Hanzo made a promise to use his deadly skills to finish those who thought them to him!</p>
+                            <div class="character-specs">
+                                <div class="skill">
+                                    <h4>Attack:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:95%;'></div>
+                                    </div> 
+                                </div>
+                                <div class="skill">
+                                    <h4>Defense:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:90%;'></div>
+                                    </div> 
+                                </div>
+                                <div class="skill">
+                                    <h4>Agility:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:75%;'></div>
+                                    </div> 
+                                </div>
+                                <div class="skill">
+                                    <h4>Speed:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:70%;'></div>
+                                    </div> 
+                                </div>
                             </div>
-                            <div class="skill">
-                                <h4>Defense:</h4> 
-                                <div class='bar'>
-                                    <div class='percent' style='width:80%;'></div>
-                                </div> 
-                            </div>
-                            <div class="skill">
-                                <h4>Agility:</h4> 
-                                <div class='bar'>
-                                    <div class='percent' style='width:93%;'></div>
-                                </div> 
-                            </div>
-                            <div class="skill">
-                                <h4>Speed:</h4> 
-                                <div class='bar'>
-                                    <div class='percent' style='width:80%;'></div>
-                                </div> 
+                            <div class="character-select">
+                                <button>Select</button>
                             </div>
                         </div>
-                        <div class="character-select">
-                            <button>Select</button>
+                    </div>
+                <div class="arrows">
+                    <i class="fas fa-chevron-circle-right" id="right-arrow"></i>
+                </div>                
+            </div>`,
+        'kateena':
+            `<div class="new-character">
+                <div class="arrows">
+                    <i class="fas fa-chevron-circle-left" id="left-arrow"></i>
+                </div>        
+                    <div class="character-profile">
+                        <div class="character-image">
+                            <img src="/characters/kateena/kateena.gif" />  
+                        </div>
+                        <div class="character-info">
+                            <h1>Kateena</h1>
+                            <p>Her dad was an accountant for the most dangerous drug lord in South America until his best friend, falsely accused him of stealing from his client. Her whole family was brutally murdered in front of her. Now she has dedicated her life to have all her dad's enemies pay for their one mistake... Spare her live.</p>
+                            <div class="character-specs">
+                                <div class="skill">
+                                    <h4>Attack:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:65%;'></div>
+                                    </div> 
+                                </div>
+                                <div class="skill">
+                                    <h4>Defense:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:70%;'></div>
+                                    </div> 
+                                </div>
+                                <div class="skill">
+                                    <h4>Agility:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:97%;'></div>
+                                    </div> 
+                                </div>
+                                <div class="skill">
+                                    <h4>Speed:</h4> 
+                                    <div class='bar'>
+                                        <div class='percent' style='width:95%;'></div>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="character-select">
+                                <button>Select</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <div class="arrows right-arrow">
-                <i class="fas fa-chevron-circle-right"></i>
-            </div>                
-        </div>    
-    `,
+                <div class="arrows">
+                    <i class="fas fa-chevron-circle-right" id="right-arrow"></i>
+                </div>                
+            </div>`,             
+    }
 };
 
 module.exports = authForms;
