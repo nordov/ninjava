@@ -1,6 +1,6 @@
 .hide{
     opacity: 0;
-    transition: opacity 100ms;
+    transition: opacity 10ms;
 }
 
 .show{
