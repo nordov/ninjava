@@ -51,7 +51,7 @@ const splashToNewCharacter = function() {
     const wrapContent = document.getElementById('wrap-content');
 
     changeHeight(logo, 150);
-    changeHeight(wrap, 450);
+    changeHeight(wrap, 600);
     changeWidth(wrap, 900)        
     fadeOut(wrapContent);
     wrapContent.innerHTML = "";  
@@ -63,7 +63,33 @@ const splashToNewCharacter = function() {
 };
 
 module.exports = splashToNewCharacter;
-},{"./views/htmls":2}],2:[function(require,module,exports){
+},{"./views/htmls":3}],2:[function(require,module,exports){
+
+
+const battle = function() {
+
+    const wrapContent = document.getElementById('wrap-content');
+    wrapContent.innerHTML = `<canvas id='canvas'></canvas>`
+
+    let canvas = document.getElementById('canvas'),
+        ctx = canvas.getContext("2d");
+
+    canvas.width = 900;
+    canvas.height = 600;
+
+    let background = new Image();
+    background.src = "/images/bg01.png";
+
+    background.onload = function() {
+        ctx.drawImage(background,0,0,900,600);
+    }
+
+    console.log(canvas);
+
+};
+
+module.exports = battle;
+},{}],3:[function(require,module,exports){
 
 const authForms = {
 
@@ -493,8 +519,9 @@ const authForms = {
 };
 
 module.exports = authForms;
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 const htmls = require('./htmls');
+const battle = require('./battle');
 
 /*************************************/
 /* CHOOSE FIGHTER SCREEN             */
@@ -506,10 +533,15 @@ const movesSelection = function (character) {
     movesContent.innerHTML = htmls.movesSelection;
     document.getElementsByClassName('arrows')[0].innerHTML = "";
     document.getElementsByClassName('arrows')[1].innerHTML = "";
+
+    document.getElementById('fight').addEventListener('click', (e) => {
+        e.preventDefault();
+        battle();
+    });
 };
 
 module.exports = movesSelection;
-},{"./htmls":2}],4:[function(require,module,exports){
+},{"./battle":2,"./htmls":3}],5:[function(require,module,exports){
 const htmls = require('./htmls');
 const splashToNewCharacter = require('../animations');
 const movesSelection = require('./moves_selection');
@@ -558,7 +590,7 @@ const newCharacter = function() {
 module.exports = newCharacter;
 
 
-},{"../animations":1,"./htmls":2,"./moves_selection":3}],5:[function(require,module,exports){
+},{"../animations":1,"./htmls":3,"./moves_selection":4}],6:[function(require,module,exports){
 const htmls = require('./app/views/htmls');
 const newCharacter = require('./app/views/new_character');
 
@@ -576,4 +608,4 @@ document.addEventListener("DOMContentLoaded", () => {
     playButton.onclick = newCharacter;     
    
 });
-},{"./app/views/htmls":2,"./app/views/new_character":4}]},{},[5]);
+},{"./app/views/htmls":3,"./app/views/new_character":5}]},{},[6]);

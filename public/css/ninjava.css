@@ -137,7 +137,7 @@ a {
     }
 
         .character-image img{
-            height: 85%;
+            height: 80%;
             margin: auto;
         }
 
@@ -210,7 +210,17 @@ a {
     }    
 
     .moves-selection form select{
+        appearance: none;
         width: 25%;
+        color: white;
+        background-color: transparent;
+        border: solid 1px white;
+    }
+
+    .moves-selection form select option{
+        color: white;
+        background-color: transparent;
+        border: solid 1px white;
     }
 
     .moves-selection button {
@@ -230,6 +240,12 @@ a {
 
 /*  END OF Moves Selection  */
 
+/* Canvasr */
+canvas {
+    border-radius: 10px;
+}
+
+/*  END OF Canvas  */
 
 /* Footer */
 .footer{

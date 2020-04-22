@@ -50,7 +50,7 @@ const splashToNewCharacter = function() {
     const wrapContent = document.getElementById('wrap-content');
 
     changeHeight(logo, 150);
-    changeHeight(wrap, 450);
+    changeHeight(wrap, 600);
     changeWidth(wrap, 900)        
     fadeOut(wrapContent);
     wrapContent.innerHTML = "";  
