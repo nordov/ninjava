@@ -12,13 +12,13 @@ const battle = function() {
     canvas.height = 600;
 
     let background = new Image();
-    background.src = "/images/bg01.png";
+    let bgNum = Math.floor(Math.random() * 5) + 1;
+    background.src = "/images/bg0" + bgNum + ".png";
 
     background.onload = function() {
         ctx.drawImage(background,0,0,900,600);
     }
 
-    console.log(canvas);
 
 };
 
