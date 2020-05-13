@@ -1,5 +1,5 @@
 const htmls = require('./htmls');
-const battle = require('./battle');
+const startBattle = require('./battle');
 
 /*************************************/
 /* CHOOSE FIGHTER SCREEN             */
@@ -14,7 +14,7 @@ const movesSelection = function (character) {
 
     document.getElementById('fight').addEventListener('click', (e) => {
         e.preventDefault();
-        battle();
+        startBattle();
     });
 };
 
