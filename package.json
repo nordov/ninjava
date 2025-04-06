@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "server": "npm run build & nodemon server.js",
-    "build": "browserify ninjava.js -o public/js/app.js "
+    "build": "browserify src/main.js -o public/js/main.js "
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "browserify": "^16.5.0",
+    "detect-port": "^2.1.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
@@ -40,6 +41,7 @@
     "babel-loader": "^8.0.6",
     "html-webpack-plugin": "^3.2.0",
     "html-webpack-template": "^6.2.0",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "open": "^10.1.0"
   }
 }

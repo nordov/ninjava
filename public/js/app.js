@@ -63,119 +63,7 @@ const splashToNewCharacter = function() {
 };
 
 module.exports = splashToNewCharacter;
-},{"./views/htmls":3}],2:[function(require,module,exports){
-const battle = function() {
-
-    const wrapContent = document.getElementById('wrap-content');
-    wrapContent.innerHTML = `<canvas id='canvas'></canvas>`
-
-    let canvas = document.getElementById('canvas'),
-        ctx = canvas.getContext("2d");
-
-    canvas.width = 900;
-    canvas.height = 600;
-
-    ctx.globalCompositeOperation = 'destination-over';
-
-    let background = new Image();
-    let bgNum = Math.floor(Math.random() * 5) + 1;
-    background.src = "/images/bg0" + bgNum + ".png";
-
-    let fighter = new Image();
-    fighter.src = "/characters/hanzo/Idle_000.png";
-
-    background.onload = function() {
-        ctx.drawImage(background,0,0,900,600);
-        ctx.drawImage(fighter, 10, 10, 100, 100);
-    }
-
-    fighter.onload = function () {
-        ctx.drawImage(fighter, 10, 10, 100, 100);
-    }
-
-    ctx.drawImage(fighter,10,10);
-
-
-};
-
-module.exports = battle;
-
-// let scene = new Image();
-// scene.src = "/images/bg0" + (Math.floor(Math.random() * 5) + 1) + ".png";
-
-// let fighter = new Image();
-// fighter.src = "/characters/hanzo/Idle_000.png";
-
-
-// let fighter;
-
-// function startBattle() {
-//     fighter = new component(30, 30, "/characters/hanzo/Idle_000.png", 10, 10, "image" );
-
-//     console.log(fighter);
-
-//     battle.start();
-// }
-
-// let battle = {
-//     canvas : document.createElement("canvas"),
-//     start : function() {
-//         this.canvas.width = 900;
-//         this.canvas.height = 270;
-//         this.context = this.canvas.getContext("2d");
-
-//         document.getElementById('wrap-content')
-//             .innerHTML = "";
-//         document.getElementById('wrap-content')            
-//             .appendChild(this.canvas);
-
-//         //this.frameNo = 0;
-//         //this.interval = setInterval(updateBattle, 20);
-//     },
-//     clear : function(){
-//         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-//     },
-//     stop : function(){
-//         clearInterval(this.interval);
-//     }
-// }
-
-// function component(width, height, character, x, y, type){
-//     this.type = type;
-//     if (type == "image"){
-//         this.image = new Image();
-//         this.image.src = character;
-//     }
-
-//     this.width = width;
-//     this.height = height;
-//     this.speedX = x;
-//     this.speedY = y;
-//     this.update = function (){
-//         ctx = battle.context;
-//         if (type == "image"){
-//             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
-//         } else {
-//             ctx.fillStyle = character;
-//             ctx.fillRect(this.x, this.y, this.width, this.height);
-//         }
-//     }
-//     this.newPos = function() {
-//         this.x += this.speedX;
-//         this.y += this.speedY;
-//     }
-// }
-
-// function updateBattle() {
-//     battle.clear();
-//     fighter.newPos();
-//     fighter.update();
-// }
-
-
-
-// module.exports = startBattle;
-},{}],3:[function(require,module,exports){
+},{"./views/htmls":6}],2:[function(require,module,exports){
 
 const authForms = {
 
@@ -605,39 +493,35 @@ const authForms = {
 };
 
 module.exports = authForms;
-},{}],4:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 const htmls = require('./htmls');
-const battle = require('./battle');
+const newCharacter = require('./new_character');
 
-/*************************************/
-/* CHOOSE FIGHTER SCREEN             */
-/*************************************/
-const movesSelection = function (character) {
 
-    const movesContent = document.getElementsByClassName('character-info')[0];
+document.addEventListener("DOMContentLoaded", () => {
 
-    movesContent.innerHTML = htmls.movesSelection;
-    document.getElementsByClassName('arrows')[0].innerHTML = "";
-    document.getElementsByClassName('arrows')[1].innerHTML = "";
+    const wrapContent = document.getElementById('wrap-content');
+    
+    wrapContent.innerHTML = htmls.justPlay; 
 
-    document.getElementById('fight').addEventListener('click', (e) => {
-        e.preventDefault();
-        battle();
-    });
-};
+    const playButton = document.getElementById('clickNPlay');
 
-module.exports = movesSelection;
-},{"./battle":2,"./htmls":3}],5:[function(require,module,exports){
+    console.log(newCharacter);
+
+    playButton.onclick = newCharacter;     
+   
+});
+},{"./htmls":2,"./new_character":4}],4:[function(require,module,exports){
 const htmls = require('./htmls');
-const splashToNewCharacter = require('../animations');
-const movesSelection = require('./moves_selection');
+const splashToNewCharacter = require('./animations');
+const movesSelection = require('./views/moves_selection');
 
 /*************************************/
 /* CHOOSE FIGHTER SCREEN             */
 /*************************************/
 const newCharacter = function() {
     
-    const charactersList = ['Hanzo',
+    const charactersList = ['Hanzo', 
                             'Wy-Te Pel',
                             'Poin Tee-Hut',
                             'Gonz O-Bits',
@@ -676,22 +560,140 @@ const newCharacter = function() {
 module.exports = newCharacter;
 
 
-},{"../animations":1,"./htmls":3,"./moves_selection":4}],6:[function(require,module,exports){
-const htmls = require('./app/views/htmls');
-const newCharacter = require('./app/views/new_character');
-
-
-document.addEventListener("DOMContentLoaded", () => {
+},{"./animations":1,"./htmls":2,"./views/moves_selection":7}],5:[function(require,module,exports){
+const battle = function() {
 
     const wrapContent = document.getElementById('wrap-content');
-    
-    wrapContent.innerHTML = htmls.justPlay; 
+    wrapContent.innerHTML = `<canvas id='canvas'></canvas>`
 
-    const playButton = document.getElementById('clickNPlay');
+    let canvas = document.getElementById('canvas'),
+        ctx = canvas.getContext("2d");
 
-    console.log(newCharacter);
+    canvas.width = 900;
+    canvas.height = 600;
 
-    playButton.onclick = newCharacter;     
-   
-});
-},{"./app/views/htmls":3,"./app/views/new_character":5}]},{},[6]);
+    ctx.globalCompositeOperation = 'destination-over';
+
+    let background = new Image();
+    let bgNum = Math.floor(Math.random() * 5) + 1;
+    background.src = "/images/bg0" + bgNum + ".png";
+
+    let fighter = new Image();
+    fighter.src = "/characters/hanzo/Idle_000.png";
+
+    background.onload = function() {
+        ctx.drawImage(background,0,0,900,600);
+        ctx.drawImage(fighter, 10, 10, 100, 100);
+    }
+
+    fighter.onload = function () {
+        ctx.drawImage(fighter, 10, 10, 100, 100);
+    }
+
+    ctx.drawImage(fighter,10,10);
+
+
+};
+
+module.exports = battle;
+
+// let scene = new Image();
+// scene.src = "/images/bg0" + (Math.floor(Math.random() * 5) + 1) + ".png";
+
+// let fighter = new Image();
+// fighter.src = "/characters/hanzo/Idle_000.png";
+
+
+// let fighter;
+
+// function startBattle() {
+//     fighter = new component(30, 30, "/characters/hanzo/Idle_000.png", 10, 10, "image" );
+
+//     console.log(fighter);
+
+//     battle.start();
+// }
+
+// let battle = {
+//     canvas : document.createElement("canvas"),
+//     start : function() {
+//         this.canvas.width = 900;
+//         this.canvas.height = 270;
+//         this.context = this.canvas.getContext("2d");
+
+//         document.getElementById('wrap-content')
+//             .innerHTML = "";
+//         document.getElementById('wrap-content')            
+//             .appendChild(this.canvas);
+
+//         //this.frameNo = 0;
+//         //this.interval = setInterval(updateBattle, 20);
+//     },
+//     clear : function(){
+//         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+//     },
+//     stop : function(){
+//         clearInterval(this.interval);
+//     }
+// }
+
+// function component(width, height, character, x, y, type){
+//     this.type = type;
+//     if (type == "image"){
+//         this.image = new Image();
+//         this.image.src = character;
+//     }
+
+//     this.width = width;
+//     this.height = height;
+//     this.speedX = x;
+//     this.speedY = y;
+//     this.update = function (){
+//         ctx = battle.context;
+//         if (type == "image"){
+//             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+//         } else {
+//             ctx.fillStyle = character;
+//             ctx.fillRect(this.x, this.y, this.width, this.height);
+//         }
+//     }
+//     this.newPos = function() {
+//         this.x += this.speedX;
+//         this.y += this.speedY;
+//     }
+// }
+
+// function updateBattle() {
+//     battle.clear();
+//     fighter.newPos();
+//     fighter.update();
+// }
+
+
+
+// module.exports = startBattle;
+},{}],6:[function(require,module,exports){
+arguments[4][2][0].apply(exports,arguments)
+},{"dup":2}],7:[function(require,module,exports){
+const htmls = require('./htmls');
+const battle = require('./battle');
+
+/*************************************/
+/* CHOOSE FIGHTER SCREEN             */
+/*************************************/
+const movesSelection = function (character) {
+
+    const movesContent = document.getElementsByClassName('character-info')[0];
+
+    movesContent.innerHTML = htmls.movesSelection;
+    document.getElementsByClassName('arrows')[0].innerHTML = "";
+    document.getElementsByClassName('arrows')[1].innerHTML = "";
+
+    document.getElementById('fight').addEventListener('click', (e) => {
+        e.preventDefault();
+        battle();
+    });
+};
+
+module.exports = movesSelection;
+},{"./battle":5,"./htmls":6}]},{},[3]);
